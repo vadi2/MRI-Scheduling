@@ -25,7 +25,7 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 
 dependencies:
-  il.core.fhir.r4: 0.8.1
+  il.core.fhir.r4: 0.9.0
 
 
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -69,8 +69,9 @@ pages:
 # partial list of allowed parameters see:
 # https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
 #
-# parameters:
-#   excludettl: true
+parameters:
+  show-inherited-invariants: false
+#  excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
