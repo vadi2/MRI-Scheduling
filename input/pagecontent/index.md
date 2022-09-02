@@ -8,4 +8,4 @@ Non accusantium maiores est repellat. Ab pariatur consectetur officiis. Qui odit
 ## Scope
 Quisquam nostrum quia ea inventore rerum excepturi. Provident veniam sequi quia ab. Qui at iste magnam mollitia quod et dolorem. Eos tempore quis sed. Tempora maiores atque ab quibusdam.
 
-Magnam tempore sit aut eligendi architecto neque. Blanditiis quod magnam dolor qui aliquid. Doloremque tenetur perferendis quasi fugiat.
+Magnam tempore sit aut eligendi architecto neque. Blanditiis quod magnam dolor qui aliquid. Doloremque tenetur perferendis quas fugiat.
