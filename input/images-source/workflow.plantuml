@@ -1,0 +1,29 @@
+@startuml
+'see documentation at https://plantuml.com/sequence-diagram
+
+title "MRI Scheduling"
+
+actor Patient
+actor Doctor #white
+participant HMO
+participant Provider
+
+== Initial appointment ==
+Patient -> Doctor: goes for a consultation
+Doctor -> Patient: gives referral
+
+== Form 17 ==
+Patient -> HMO: request form 17 using referral
+HMO -> Patient: filled form 17 with all details(such as procedure code)
+
+== Appointment scheduling ==
+Patient -> Provider: check appointment dates (with 1..* providers), can email
+Provider -> Patient: return possible dates (1..* dates), by phone, can take a few days
+Patient -> Provider: confirm appointment
+
+== Procedure report==
+Patient --> Provider: //get the procedure done//
+Provider -> Doctor: send report (if provider and HMO are the same)
+Provider -> Patient: send report (if provider and HMO are different)
+
+@enduml
