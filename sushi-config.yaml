@@ -95,7 +95,7 @@ menu:
   Artifacts: artifacts.html
   Base Specs:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
-    IL Core: new-tab {{site.data.fhir.il_core_fhir_r4}}
+    IL Core: new-tab https://en.fhir-il-community.org/fhir-israel-core
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
