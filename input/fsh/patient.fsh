@@ -3,13 +3,13 @@
 
 // titlecase naming here
 Profile: MRIPatient
+// name of the parent comes from https://simplifier.net/ILCore/ILCorePatient/~json see "name" field
+// if there is no parent in ILCore, the original fhir resource (like Patient) should then be parent
+Parent: ILCorePatient
 // lowercase naming with dashes here, aligned with ILCore
 Id: mri-patient
 // human-readable name - titlecase with spaces
 Title: "MRI Patient"
-// name of the parent comes from https://simplifier.net/ILCore/ILCorePatient/~json see "name" field
-// if there is no parent in ILCore, the original fhir resource (like Patient) should then be parent
-Parent: ILCorePatient
 // FIXME: auto-translated
 Description: "מטרת פרופיל זה היא להגדיר ייצוג של מטופל המבקש לקבל שירות MRI בהקשר של ניטור זמן רשימת ההמתנה של משרד הבריאות הישראלי.
 
@@ -18,22 +18,33 @@ The purpose of this profile is to define a representation of a patient requestin
 * ^language = LanguageCS#he "Hebrew"
 * identifier[il-id] MS
 * identifier[pna-id] MS
+* gender = #female
 
 
-Mapping: PatientToX
+Mapping: PatientToGertner
 Source:	MRIPatient
 Target: "http://fhir.health.gov.il/mri"
 Id: PatientMapping
-Title: "Patient mapping to X"
-Description: "Mapping of the patient profile to X" 	
-* identifier[il-id] -> "ID_Type_code = 1"
+Title: "Mapping of Patient's administrative information to Gertner's MRI waitlist data model"
+* identifier[il-id] -> "ID_Type_code"
 * identifier[pna-id] -> "ID_Type_code"
-// TODO: need to map "ID" and "temporary values"
+// TODO: need to map "ID" and "temporary values" 
+
+Instance: minimal-patient
+InstanceOf: MRIPatient
+Usage: #example
+* meta.profile = Canonical(MRIPatient)
+* identifier.system = "http://fhir.health.gov.il/identifier/il-national-id"
+* identifier.value = "000000018"
+* name.family = "כהן"
+* name.given = "שמואל"
+* name.text = "שמואל כהן"
+* birthDate = "1952-02-17"
 
 Instance: patient-with-israeli-id
 InstanceOf: MRIPatient
 Usage: #example
-* meta.profile = "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
+* meta.profile = Canonical(MRIPatient)
 * extension.url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
 * extension.valueCodeableConcept = http://fhir.health.gov.il/cs/paying-entity-moh#103 "קופת חולים מכבי"
 * address.use = #home
