@@ -8,22 +8,27 @@ actor Doctor #white
 participant HMO
 participant Provider
 
-== Initial appointment ==
+== Initial appointment==
 Patient -> Doctor: goes for a consultation
-Doctor -> Patient: gives referral
+Doctor -> Patient: gives referral\n//ServiceRequest//
 
-== Form 17 ==
-Patient -> HMO: request form 17 using referral
-HMO -> Patient: filled form 17 with all details(such as procedure code)
+== Form 17==
+Patient -> HMO: request form 17 using referral\n//Claim.use=preauthorization//
+HMO -> Patient: filled form 17 with all details (such as procedure code)\n//ClaimResponse//
 
-== Appointment scheduling ==
-Patient -> Provider: check appointment dates (with 1..* providers), can email
-Provider -> Patient: return possible dates (1..* dates), by phone, can take a few days
-Patient -> Provider: confirm appointment
+== Appointment scheduling==
+Patient -> Provider: check appointment dates (with 1..* providers), can email\n//Schedule+Slot//
+Provider -> Patient: return possible dates (1..* dates), by phone, can take a few days\n//Schedule+Slot//
+Patient -> Provider: request appointment\n//Appointment//
+Provider -> Patient: confirm appointment\n//AppointmentResponse//
+
+== Appointment cancellation (optional)==
+Patient -> Provider: notify appointment cancellation\n//Appointment//
+Provider -> Patient: confirm appointment cancellation\n//Appointment//
 
 == Procedure report==
-Patient --> Provider: //get the procedure done//
-Provider -> Doctor: send report (if provider and HMO are the same)
-Provider -> Patient: send report (if provider and HMO are different)
+Patient -->> Provider: //get the procedure done//
+Provider -> Doctor: send report (if provider and HMO are the same)\n//Procedure/DiagnosticReport//
+Provider -> Patient: send report (if provider and HMO are different)\n//Procedure/DiagnosticReport//
 
 @enduml
