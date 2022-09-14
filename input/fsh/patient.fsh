@@ -33,6 +33,7 @@ Title: "Mapping of Patient's administrative information to Gertner's MRI waitlis
 Instance: minimal-patient
 InstanceOf: MRIPatient
 Usage: #example
+Description: "Example of a minimal patient resource conforming to MRI measurement needs"
 * meta.profile = Canonical(MRIPatient)
 * identifier.system = "http://fhir.health.gov.il/identifier/il-national-id"
 * identifier.value = "000000018"
@@ -44,6 +45,7 @@ Usage: #example
 Instance: patient-with-israeli-id
 InstanceOf: MRIPatient
 Usage: #example
+Description: "Example of a more real-world patient resource"
 * meta.profile = Canonical(MRIPatient)
 * extension.url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
 * extension.valueCodeableConcept = http://fhir.health.gov.il/cs/paying-entity-moh#103 "קופת חולים מכבי"

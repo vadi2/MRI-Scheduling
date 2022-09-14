@@ -27,6 +27,7 @@ Title: "Mapping of HMO's administrative information to Gertner's MRI waitlist da
 Instance: minimal-hmo
 InstanceOf: MRIHMO
 Usage: #example
+Description: "Example of a minimal HMO resource conforming to MRI measurement needs"
 * meta.profile = Canonical(MRIHMO)
 * active = true
 * name = "שנה אותי"
@@ -35,6 +36,7 @@ Usage: #example
 Instance: organization-ministry-of-health
 InstanceOf: Organization
 Usage: #example
+Description: "Example of a more real-world HMO resource"
 * meta.profile = Canonical(MRIHMO)
 * identifier.system = "http://fhir.health.gov.il/identifier/legal-entity"
 * identifier.value = "500100904"
