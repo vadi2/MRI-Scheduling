@@ -23,7 +23,7 @@ The purpose of this profile is to define a representation of a patient requestin
 
 Mapping: PatientToGertner
 Source:	MRIPatient
-Target: "http://fhir.health.gov.il/mri"
+Target: "http://www.gertnerinst.org.il"
 Id: PatientMapping
 Title: "Mapping of Patient's administrative information to Gertner's MRI waitlist data model"
 * identifier[il-id] -> "ID_Type_code"

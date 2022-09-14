@@ -18,7 +18,7 @@ The purpose of this profile is to define a representation of an HMO approving an
 
 Mapping: HMOToGertner
 Source:	MRIHMO
-Target: "http://fhir.health.gov.il/mri"
+Target: "http://www.gertnerinst.org.il"
 Id: HMOMapping
 Title: "Mapping of HMO's administrative information to Gertner's MRI waitlist data model"
 // TODO: is this the correct exact mapping?
