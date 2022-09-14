@@ -1,19 +1,41 @@
-Profile: MyPatient
+// see https://hl7.org/fhir/uv/shorthand/overview.html
+// and https://hl7.org/fhir/uv/shorthand/reference.html for documentation
+
+// titlecase naming here
+Profile: MRIPatient
+// lowercase naming with dashes here, aligned with ILCore
+Id: mri-patient
+// human-readable name - titlecase with spaces
+Title: "MRI Patient"
+// name of the parent comes from https://simplifier.net/ILCore/ILCorePatient/~json see "name" field
+// if there is no parent in ILCore, the original fhir resource (like Patient) should then be parent
 Parent: ILCorePatient
-Description: "An example profile of the Patient resource."
-* name 1..* MS
+// FIXME: auto-translated
+Description: "מטרת פרופיל זה היא להגדיר ייצוג של מטופל המבקש לקבל שירות MRI בהקשר של ניטור זמן רשימת ההמתנה של משרד הבריאות הישראלי.
+
+The purpose of this profile is to define a representation of a patient requesting an MRI service, in the context of monitoring the waiting list times for the Israeli Ministry of Health."
+// the language the profile is in. Does not say that the resource itself should be in Hebrew itself, just that the profile uses Hebrew
+* ^language = LanguageCS#he "Hebrew"
+* identifier[il-id] MS
+* identifier[pna-id] MS
+
+
+Mapping: PatientToX
+Source:	MRIPatient
+Target: "http://fhir.health.gov.il/mri"
+Id: PatientMapping
+Title: "Patient mapping to X"
+Description: "Mapping of the patient profile to X" 	
+* identifier[il-id] -> "ID_Type_code = 1"
+* identifier[pna-id] -> "ID_Type_code"
+// TODO: need to map "ID" and "temporary values"
 
 Instance: patient-with-israeli-id
-InstanceOf: MyPatient
+InstanceOf: MRIPatient
 Usage: #example
 * meta.profile = "http://fhir.health.gov.il/StructureDefinition/il-core-patient"
 * extension.url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
 * extension.valueCodeableConcept = http://fhir.health.gov.il/cs/paying-entity-moh#103 "קופת חולים מכבי"
-* address.extension.extension[0].url = "longitude"
-* address.extension.extension[=].valueDecimal = 182468.59
-* address.extension.extension[+].url = "latitude"
-* address.extension.extension[=].valueDecimal = 670131.38
-* address.extension.url = "http://hl7.org/fhir/StructureDefinition/geolocation"
 * address.use = #home
 * address.type = #physical
 * address.text = "אלכסנדר פן 1א' דירה 4 תל אביב"
@@ -48,11 +70,3 @@ Usage: #example
 * gender = #female
 * birthDate = "2003-04-17"
 * deceasedBoolean = false
-
-Mapping: PatientToX
-Source:	MyPatient
-Target: "http://fhir.health.gov.il/mri"
-Id: PatientMapping
-Title: "Patient mapping to X"
-Description: "Mapping of the patient profile to X" 	
-* name -> "<Gertner variable name>"
