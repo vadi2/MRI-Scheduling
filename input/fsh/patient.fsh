@@ -18,7 +18,6 @@ The purpose of this profile is to define a representation of a patient requestin
 * ^language = LanguageCS#he "Hebrew"
 * identifier[il-id] MS
 * identifier[pna-id] MS
-* gender = #female
 
 
 Mapping: PatientToGertner
@@ -41,6 +40,7 @@ Description: "Example of a minimal patient resource conforming to MRI measuremen
 * name.given = "שמואל"
 * name.text = "שמואל כהן"
 * birthDate = "1952-02-17"
+* gender = #female
 
 Instance: patient-with-israeli-id
 InstanceOf: MRIPatient
