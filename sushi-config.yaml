@@ -51,15 +51,15 @@ dependencies:
 
 pages:
   index.md:
-    title: Introduction
+    title: מבוא
   2_use-cases.md:
-    title: Use Cases
+    title: מקרי שימוש
   3_workflows.md:
-    title: Workflows
+    title: זרימות עבודה
   4_security.md:
-    title: Security
+    title: בִּטָחוֹן
   5_examples.md:
-    title: Examples
+    title: דוגמאות
 
 #
 # The parameters property represents IG.definition.parameter. Rather
@@ -88,15 +88,15 @@ parameters:
 #   Artifacts: artifacts.html
 
 menu:
-  Home: index.html
-  Use Cases: 2_use-cases.html
-  Workflows: 3_workflows.html
-  Security: 4_security.html
-  Examples: 5_examples.html
-  Artifacts: artifacts.html
-  Base Specs:
+  דף הבית: index.html
+  מקרי שימוש: 2_use-cases.html
+  זרימות עבודה: 3_workflows.html
+  בִּטָחוֹן: 4_security.html
+  דוגמאות: 5_examples.html
+  חפצים: artifacts.html
+  מפרטי בסיס:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
-    IL Core: new-tab https://en.fhir-il-community.org/fhir-israel-core
+    ליבת ישראל: new-tab https://en.fhir-il-community.org/fhir-israel-core
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
