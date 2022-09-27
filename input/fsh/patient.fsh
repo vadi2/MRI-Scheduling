@@ -11,9 +11,7 @@ Id: mri-patient
 // human-readable name - titlecase with spaces
 Title: "MRI Patient"
 // FIXME: auto-translated
-Description: "מטרת פרופיל זה היא להגדיר ייצוג של מטופל המבקש לקבל שירות MRI בהקשר של ניטור זמן רשימת ההמתנה של משרד הבריאות הישראלי.
-
-The purpose of this profile is to define a representation of a patient requesting an MRI service, in the context of monitoring the waiting list times for the Israeli Ministry of Health."
+Description: "מטרת פרופיל זה היא להגדיר ייצוג של מטופל המבקש לקבל שירות MRI בהקשר של ניטור זמן רשימת ההמתנה של משרד הבריאות הישראלי."
 // the language the profile is in. Does not say that the resource itself should be in Hebrew itself, just that the profile uses Hebrew
 * ^language = LanguageCS#he "Hebrew"
 * identifier[il-id] MS
@@ -24,7 +22,7 @@ Mapping: PatientToGertner
 Source:	MRIPatient
 Target: "http://www.gertnerinst.org.il"
 Id: PatientMapping
-Title: "Mapping of Patient's administrative information to Gertner's MRI waitlist data model"
+Title: "מיפוי המידע האדמיניסטרטיבי של המטופל למודל נתוני רשימת ההמתנה של MRI של גרטנר"
 * identifier[il-id] -> "ID_Type_code"
 * identifier[pna-id] -> "ID_Type_code"
 // TODO: need to map "ID" and "temporary values" 
@@ -32,7 +30,7 @@ Title: "Mapping of Patient's administrative information to Gertner's MRI waitlis
 Instance: minimal-patient
 InstanceOf: MRIPatient
 Usage: #example
-Description: "Example of a minimal patient resource conforming to MRI measurement needs"
+Description: "דוגמה למשאב מטופל מינימלי התואם לצרכי מדידת MRI"
 * meta.profile = Canonical(MRIPatient)
 * identifier.system = "http://fhir.health.gov.il/identifier/il-national-id"
 * identifier.value = "000000018"
@@ -45,7 +43,7 @@ Description: "Example of a minimal patient resource conforming to MRI measuremen
 Instance: patient-with-israeli-id
 InstanceOf: MRIPatient
 Usage: #example
-Description: "Example of a more real-world patient resource"
+Description: "דוגמה למשאב מטופל אמיתי יותר"
 * meta.profile = Canonical(MRIPatient)
 * extension.url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
 * extension.valueCodeableConcept = http://fhir.health.gov.il/cs/paying-entity-moh#103 "קופת חולים מכבי"

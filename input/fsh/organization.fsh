@@ -11,23 +11,21 @@ Id: mri-hmo
 // human-readable name - titlecase with spaces
 Title: "MRI HMO"
 // FIXME: auto-translated
-Description: "מטרת פרופיל זה היא להגדיר ייצוג של קופת חולים המאשרת שירות MRI, במסגרת מעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי.
-
-The purpose of this profile is to define a representation of an HMO approving an MRI service, in the context of monitoring the waiting list times for the Israeli Ministry of Health."
+Description: "מטרת פרופיל זה היא להגדיר ייצוג של קופת חולים המאשרת שירות MRI, במסגרת מעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
 * identifier[moe-inst] MS 
 
 Mapping: HMOToGertner
 Source:	MRIHMO
 Target: "http://www.gertnerinst.org.il"
 Id: HMOMapping
-Title: "Mapping of HMO's administrative information to Gertner's MRI waitlist data model"
+Title: "מיפוי המידע האדמיניסטרטיבי של קופת החולים למודל נתוני רשימת המתנה MRI של גרטנר"
 // TODO: is this the correct exact mapping?
 * identifier[moe-inst] -> "HMO_code"
 
 Instance: minimal-hmo
 InstanceOf: MRIHMO
 Usage: #example
-Description: "Example of a minimal HMO resource conforming to MRI measurement needs"
+Description: "דוגמה למשאב מינימלי של קופת חולים התואם לצרכי מדידת MRI"
 * meta.profile = Canonical(MRIHMO)
 * active = true
 * name = "שנה אותי"
@@ -36,7 +34,7 @@ Description: "Example of a minimal HMO resource conforming to MRI measurement ne
 Instance: organization-ministry-of-health
 InstanceOf: Organization
 Usage: #example
-Description: "Example of a more real-world HMO resource"
+Description: "דוגמה למשאב קופת חולים אמיתי יותר"
 * meta.profile = Canonical(MRIHMO)
 * identifier.system = "http://fhir.health.gov.il/identifier/legal-entity"
 * identifier.value = "500100904"
