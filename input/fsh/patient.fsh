@@ -16,6 +16,7 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 * ^language = LanguageCS#he "Hebrew"
 * identifier[il-id] MS
 * identifier[pna-id] MS
+* birthDate ^short = "The date of birth for the individual. Can be just the year"
 
 
 Mapping: PatientToGertner
@@ -37,7 +38,7 @@ Description: "דוגמה למשאב מטופל מינימלי התואם לצר�
 * name.family = "כהן"
 * name.given = "שמואל"
 * name.text = "שמואל כהן"
-* birthDate = "1952-02-17"
+* birthDate = "1952"
 * gender = #female
 
 Instance: patient-with-israeli-id
