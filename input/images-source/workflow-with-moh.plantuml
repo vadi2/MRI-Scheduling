@@ -1,0 +1,38 @@
+@startuml
+'see documentation at https://plantuml.com/sequence-diagram
+
+title "MRI Scheduling"
+
+actor Patient
+actor Doctor #white
+participant HMO
+participant Provider
+participant MoH
+
+== Initial appointment==
+Patient -[#grey]> Doctor: <color #grey>goes for a consultation</color>
+Doctor -[#grey]> Patient: <color #grey>gives referral</color>\n//<color #grey>ServiceRequest</color>//
+
+== Appointment scheduling==
+Patient -[#grey]> Provider: <color #grey>check appointment dates (with 1..* providers), can email</color>\n//<color #grey>Schedule+Slot</color>//
+Provider -[#grey]> Patient: <color #grey>return possible dates (1..* dates), by phone, can take a few days</color>\n//<color #grey>Schedule+Slot</color>//
+Patient -[#grey]> Provider: <color #grey>request appointment</color>\n//<color #grey>Appointment</color>//
+Provider -[#grey]> Patient: <color #grey>confirm appointment</color>\n//<color #grey>AppointmentResponse</color>//
+
+== Form 17==
+Patient -[#grey]> HMO: <color #grey>request form 17 using referral</color>\n//<color #grey>Claim.use=preauthorization</color>//
+HMO -[#grey]> Patient: <color #grey>filled form 17 with all details (such as procedure code)</color>\n//<color #grey>ClaimResponse</color>//
+
+' HMO can say no, then the patient needs to do the appointment scheduling once again
+' update the graph
+
+== Appointment cancellation (optional)==
+Patient -[#grey]> Provider: <color #grey>notify appointment cancellation</color>\n//<color #grey>Appointment</color>//
+Provider -[#grey]> Patient: <color #grey>confirm appointment cancellation</color>\n//<color #grey>Appointment</color>//
+
+== Procedure report==
+Patient --[#grey]>> Provider: <color #grey>//get the procedure done//
+Provider -[#grey]> Doctor: <color #grey>send report (if provider and HMO are the same)</color>\n//<color #grey>Procedure/DiagnosticReport</color>//
+Provider -[#grey]> Patient: <color #grey>send report (if provider and HMO are different)</color>\n//<color #grey>Procedure/DiagnosticReport</color>//
+
+@enduml
