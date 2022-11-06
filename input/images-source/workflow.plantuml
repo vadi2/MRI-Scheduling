@@ -6,21 +6,27 @@ title "MRI Scheduling"
 actor Patient
 actor Doctor #white
 participant HMO
+participant "Private insurer"
 participant Provider
 
 == Initial appointment==
 Patient -> Doctor: goes for a consultation
 Doctor -> Patient: gives referral\n//ServiceRequest//
 
-== Form 17==
-Patient -> HMO: request form 17 using referral\n//Claim.use=preauthorization//
-HMO -> Patient: filled form 17 with all details (such as procedure code)\n//ClaimResponse//
-
 == Appointment scheduling==
 Patient -> Provider: check appointment dates (with 1..* providers), can email\n//Schedule+Slot//
 Provider -> Patient: return possible dates (1..* dates), by phone, can take a few days\n//Schedule+Slot//
 Patient -> Provider: request appointment\n//Appointment//
 Provider -> Patient: confirm appointment\n//AppointmentResponse//
+
+== Form 17==
+Patient -> HMO: request form 17 using referral\n//Claim.use=preauthorization//
+HMO -> Patient: filled form 17 with all details (such as procedure code)\n//ClaimResponse//
+
+Group Alternative - private insurer
+Patient -> "Private insurer": request form 17 using referral to a private insurer instead of HMO\n//Claim.use=preauthorization//
+"Private insurer" -> Patient: filled form 17 with all details (such as procedure code)\n//ClaimResponse//
+end
 
 == Appointment cancellation (optional)==
 Patient -> Provider: notify appointment cancellation\n//Appointment//
