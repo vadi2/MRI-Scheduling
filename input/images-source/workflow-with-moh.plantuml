@@ -1,38 +1,46 @@
 @startuml
 'see documentation at https://plantuml.com/sequence-diagram
 
-title "MRI Scheduling"
+title "MRI Scheduling - view on data sent to MoH"
 
 actor Patient
 actor Doctor #white
-participant HMO
-participant Provider
+participant HMO #white 
+participant "Private insurer" #white
+participant Provider #white
 participant MoH
 
 == Initial appointment==
-Patient -[#grey]> Doctor: <color #grey>goes for a consultation</color>
-Doctor -[#grey]> Patient: <color #grey>gives referral</color>\n//<color #grey>ServiceRequest</color>//
+Patient -> Doctor: goes for a consultation
+Doctor -> Patient: gives referral\n//ServiceRequest//
 
 == Appointment scheduling==
-Patient -[#grey]> Provider: <color #grey>check appointment dates (with 1..* providers), can email</color>\n//<color #grey>Schedule+Slot</color>//
-Provider -[#grey]> Patient: <color #grey>return possible dates (1..* dates), by phone, can take a few days</color>\n//<color #grey>Schedule+Slot</color>//
-Patient -[#grey]> Provider: <color #grey>request appointment</color>\n//<color #grey>Appointment</color>//
-Provider -[#grey]> Patient: <color #grey>confirm appointment</color>\n//<color #grey>AppointmentResponse</color>//
+Patient -> Provider: check appointment dates (with 1..* providers), can email\n//Schedule+Slot//
+Provider -> Patient: return possible dates (1..* dates), by phone, can take a few days\n//Schedule+Slot//
+Patient -> Provider: request appointment\n//Appointment//
+Provider -> Patient: confirm appointment\n//AppointmentResponse//
 
 == Form 17==
-Patient -[#grey]> HMO: <color #grey>request form 17 using referral</color>\n//<color #grey>Claim.use=preauthorization</color>//
-HMO -[#grey]> Patient: <color #grey>filled form 17 with all details (such as procedure code)</color>\n//<color #grey>ClaimResponse</color>//
+Patient -> HMO: request form 17 using referral\n//Claim.use=preauthorization//
+HMO -> Patient: filled form 17 with all details (such as procedure code)\n//ClaimResponse//
 
-' HMO can say no, then the patient needs to do the appointment scheduling once again
-' update the graph
+Group Alternative - private insurer
+  Patient -> "Private insurer": request form 17 using referral to a private insurer instead of HMO\n//Claim.use=preauthorization//
+  "Private insurer" -> Patient: filled form 17 with all details (such as procedure code)\n//ClaimResponse//
+end
+
+HMO -> MoH: Send: HMO_code, ID_Type_code, Patient_Encrypt_ID, Population_group_code, Birth_Date \nGender_code, Birth_Country_code, Passport_Country_code, City_code, \nPatient_Agas_code, HMO_code, MRI_Referral_date, MRI_Referral_Type_Code, \nMRI_Referral_Reason, MRI_Urgency, MRI_Referral_Private, MRI_Start_Certificate_Center_date,  \nMRI_Confirmation_Code, MRI_Confirmation_Date, MRI_refuse_reason, \nMRI_17_Form_Date, MRI_17_Form_Provider_Code, MRI_17_Form_Number \n\nThese variables use: //Patient, Organization, AppointmentResponse (+Appointment), //\n//ServiceRequest, ClaimResponse//
+
 
 == Appointment cancellation (optional)==
-Patient -[#grey]> Provider: <color #grey>notify appointment cancellation</color>\n//<color #grey>Appointment</color>//
-Provider -[#grey]> Patient: <color #grey>confirm appointment cancellation</color>\n//<color #grey>Appointment</color>//
+Patient -> Provider: notify appointment cancellation\n//Appointment//
+Provider -> Patient: confirm appointment cancellation\n//Appointment//
 
 == Procedure report==
-Patient --[#grey]>> Provider: <color #grey>//get the procedure done//
-Provider -[#grey]> Doctor: <color #grey>send report (if provider and HMO are the same)</color>\n//<color #grey>Procedure/DiagnosticReport</color>//
-Provider -[#grey]> Patient: <color #grey>send report (if provider and HMO are different)</color>\n//<color #grey>Procedure/DiagnosticReport</color>//
+Patient -->> Provider: //get the procedure done//
+Provider -> Doctor: send report (if provider and HMO are the same)\n//Procedure/DiagnosticReport//
+Provider -> Patient: send report (if provider and HMO are different)\n//Procedure/DiagnosticReport//
+
+HMO -> MoH: Send: Pay_Entity_Code, MRI_Provider_Code, MRI_Type_Code, MRI_Execution_Place, \nMRI_Execution_Date, MRI_Execution_Time, MRI_Decipher_Date \n\nThese variables use: //Claim, Procedure, DiagnosticReport//
 
 @enduml
