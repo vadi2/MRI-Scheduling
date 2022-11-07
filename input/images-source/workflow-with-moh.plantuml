@@ -35,6 +35,14 @@ Provider -> Patient: <color #grey>confirm appointment cancellation\n//Appointmen
 
 Provider -> MoH: Send: MRI_Cancelation_Date, MRI_cancelation_reason \n\nUsing: //Appointment//
 
+== Appointment postponement (optional)==
+Patient -> Provider: request appointment postponement\n //Appointment//
+Provider -> Patient: return possible new dates\n //Schedule+Slot//
+Patient -> Provider: request new date\n //Appointment//
+Provider -> Patient: confirm appointment\n //AppointmentResponse//
+
+Provider -> MoH: Send: MRI_Prev_Appointment_Date, MRI_setting_Date, \nMRI_New_Appointment_Date, MRI_Postponement_Reason \n\nUsing: //Appointment//
+
 == Procedure report==
 Patient -->> Provider: <color #grey>//get the procedure done//
 Provider -> Doctor: <color #grey>send report (if provider and HMO are the same)\n//Procedure/DiagnosticReport//

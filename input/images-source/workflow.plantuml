@@ -28,6 +28,12 @@ HMO -> Patient: filled form 17 with all details (such as procedure code)\n//Clai
 Patient -> Provider: notify appointment cancellation\n//Appointment//
 Provider -> Patient: confirm appointment cancellation\n//Appointment//
 
+== Appointment postponement (optional)==
+Patient -> Provider: request appointment postponement\n //Appointment//
+Provider -> Patient: return possible new dates\n //Schedule+Slot//
+Patient -> Provider: request new date\n //Appointment//
+Provider -> Patient: confirm appointment\n //AppointmentResponse//
+
 == Procedure report==
 Patient -->> Provider: //get the procedure done//
 Provider -> Doctor: send report (if provider and HMO are the same)\n//Procedure/DiagnosticReport//
