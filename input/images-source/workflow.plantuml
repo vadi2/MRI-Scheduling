@@ -1,4 +1,5 @@
 @startuml
+'editable with https://planttext.com
 'see documentation at https://plantuml.com/sequence-diagram
 
 title "MRI Scheduling"
@@ -22,11 +23,6 @@ Provider -> Patient: confirm appointment\n//AppointmentResponse//
 == Form 17==
 Patient -> HMO: request form 17 using referral\n//Claim.use=preauthorization//
 HMO -> Patient: filled form 17 with all details (such as procedure code)\n//ClaimResponse//
-
-Group Alternative - private insurer
-Patient -> "Private insurer": request form 17 using referral to a private insurer instead of HMO\n//Claim.use=preauthorization//
-"Private insurer" -> Patient: filled form 17 with all details (such as procedure code)\n//ClaimResponse//
-end
 
 == Appointment cancellation (optional)==
 Patient -> Provider: notify appointment cancellation\n//Appointment//
