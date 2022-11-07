@@ -7,7 +7,6 @@ title "MRI Scheduling"
 actor Patient
 actor Doctor #white
 participant HMO
-participant "Private insurer"
 participant Provider
 
 == Initial appointment==

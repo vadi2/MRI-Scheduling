@@ -7,7 +7,6 @@ title "MRI Scheduling - view on data sent to MoH"
 actor Patient
 actor Doctor #white
 participant HMO #white 
-participant "Private insurer" #white
 participant Provider #white
 participant MoH
 
