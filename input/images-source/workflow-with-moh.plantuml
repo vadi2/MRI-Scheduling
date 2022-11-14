@@ -5,50 +5,61 @@
 title "MRI Scheduling - view on data sent to MoH"
 
 actor Patient
-actor Doctor #white
+actor "HMO Doctor" #white
+actor "Private Doctor" #white
 participant HMO #white 
-participant Provider #white
+participant "MRI Provider" #white
 participant MoH
 
 == Initial appointment==
-Patient -> Doctor: <color #grey>goes for a consultation
-Doctor -> Patient: <color #grey>gives referral\n//ServiceRequest//
+Patient -> "HMO Doctor": <color #grey>goes for a consultation
+"HMO Doctor" -> Patient: <color #grey>gives referral (with condition and/or procedure code)
+
+alt Private doctor 
+    Patient -> "Private Doctor": <color #grey>goes for a consultation
+    "Private Doctor" -> Patient: <color #grey>gives referral
+
+    Patient -> "HMO Doctor": <color #grey>submit referral information
+    "HMO Doctor" -> HMO: <color #grey>request form 17 for patient
+    HMO -> "HMO Doctor": <color #grey>return form 17
+    "HMO Doctor" -> Patient: <color #grey>return form 17
+end
 
 == Appointment scheduling==
-Patient -> Provider: <color #grey>check appointment dates (with 1..* providers), can email\n//Schedule+Slot//
-Provider -> Patient: <color #grey>return possible dates (1..* dates), by phone, can take a few days\n//Schedule+Slot//
-Patient -> Provider: <color #grey>request appointment\n//Appointment//
-Provider -> Patient: <color #grey>confirm appointment\n//AppointmentResponse//
+Patient -> "MRI Provider": <color #grey>check appointment dates (with 1..* providers), can email
+"MRI Provider" -> Patient: <color #grey>return possible dates (1..* dates), by phone, can take a few days
+Patient -> "MRI Provider": <color #grey>request appointment
+"MRI Provider" -> Patient: <color #grey>confirm appointment
 
-Provider -> MoH: Send: MRI_Provider_Code, ID_Type_code, Patient_Encrypt_ID, \nPopulation_group_code, Birth_Date, Gender_code, \nGender_code, Birth_Country_code, Passport_Country_code, \nCity_code, Patient_full_address, Patient_Agas_code, \nMRI_Referral_date, MRI_Referral_Type_Code, MRI_Referral_Reason, \nMRI_Urgency\n\nUsing: //Location, Patient, ServiceRequest//
+"MRI Provider" -> MoH: Send: MRI_Provider_Code, ID_Type_code, Patient_Encrypt_ID, \nPopulation_group_code, Birth_Date, Gender_code, \nGender_code, Birth_Country_code, Passport_Country_code, \nCity_code, Patient_full_address, Patient_Agas_code, \nMRI_Referral_date, MRI_Referral_Type_Code, MRI_Referral_Reason, \nMRI_Urgency\n\nUsing: //Location, Patient, ServiceRequest//
 
 == Form 17==
-Patient -> HMO: request form 17 using referral\n//Claim.use=preauthorization//
-HMO -> Patient: <color #grey>filled form 17 with all details (such as procedure code)\n//ClaimResponse//
+Patient -> HMO: request form 17 using referral
+HMO -> Patient: <color #grey>filled form 17 with all details (such as procedure code)
 
-HMO -> MoH: Send: HMO_code, ID_Type_code, Patient_Encrypt_ID, Population_group_code, Birth_Date \nGender_code, Birth_Country_code, Passport_Country_code, City_code, \nPatient_Agas_code, HMO_code, MRI_Referral_date, MRI_Referral_Type_Code, \nMRI_Referral_Reason, MRI_Urgency, MRI_Referral_Private, MRI_Start_Certificate_Center_date,  \nMRI_Confirmation_Code, MRI_Confirmation_Date, MRI_refuse_reason, \nMRI_17_Form_Date, MRI_17_Form_Provider_Code, MRI_17_Form_Number \n\nUsing: //Patient, Organization, AppointmentResponse (+Appointment), //\n//ServiceRequest, ClaimResponse//
+HMO -> MoH: Send: HMO_code, ID_Type_code, Patient_Encrypt_ID, Population_group_code, Birth_Date \nGender_code, Birth_Country_code, Passport_Country_code, City_code, \nPatient_Agas_code, HMO_code, MRI_Referral_date, MRI_Referral_Type_Code, \nMRI_Referral_Reason, MRI_Urgency, MRI_Referral_Private, MRI_Start_Certificate_Center_date,  \nMRI_Confirmation_Code, MRI_Confirmation_Date, MRI_refuse_reason, \nMRI_17_Form_Date, MRI_17_Form_Provider_Code, MRI_17_Form_Number \n\nUsing: //Patient, Organization, AppointmentResponse (+Appointment), //
 
 == Appointment cancellation (optional)==
-Patient -> Provider: <color #grey>notify appointment cancellation\n//Appointment//
-Provider -> Patient: <color #grey>confirm appointment cancellation\n//Appointment//
+Patient -> "MRI Provider": <color #grey>notify appointment cancellation
+"MRI Provider" -> Patient: <color #grey>confirm appointment cancellation
 
-Provider -> MoH: Send: MRI_Cancelation_Date, MRI_cancelation_reason \n\nUsing: //Appointment//
+"MRI Provider" -> MoH: Send: MRI_Cancelation_Date, MRI_cancelation_reason \n\nUsing: //Appointment//
 
 == Appointment postponement (optional)==
-Patient -> Provider: request appointment postponement\n //Appointment//
-Provider -> Patient: return possible new dates\n //Schedule+Slot//
-Patient -> Provider: request new date\n //Appointment//
-Provider -> Patient: confirm appointment\n //AppointmentResponse//
+Patient -> "MRI Provider": request appointment postponement
+"MRI Provider" -> Patient: return possible new dates
+Patient -> "MRI Provider": request new date
+"MRI Provider" -> Patient: confirm appointment
 
-Provider -> MoH: Send: MRI_Prev_Appointment_Date, MRI_setting_Date, \nMRI_New_Appointment_Date, MRI_Postponement_Reason \n\nUsing: //Appointment//
+"MRI Provider" -> MoH: Send: MRI_Prev_Appointment_Date, MRI_setting_Date, \nMRI_New_Appointment_Date, MRI_Postponement_Reason \n\nUsing: //Appointment//
 
 == Procedure report==
-Patient -->> Provider: <color #grey>//get the procedure done//
-Provider -> Doctor: <color #grey>send report (if provider and HMO are the same)\n//Procedure/DiagnosticReport//
-Provider -> Patient: <color #grey>send report (if provider and HMO are different)\n//Procedure/DiagnosticReport//
+Patient -->> "MRI Provider": <color #grey>//get the procedure done//
+"MRI Provider" -> "HMO Doctor": <color #grey>send report (if provider and HMO are the same)
+"MRI Provider" -> Patient: <color #grey>send report (if provider and HMO are different)
 
 HMO -> MoH: Send: Pay_Entity_Code, MRI_Provider_Code, MRI_Type_Code, MRI_Execution_Place, \nMRI_Execution_Date, MRI_Execution_Time, MRI_Decipher_Date \n\nUsing: //Claim, Procedure, DiagnosticReport//
 
-Provider -> MoH: Send: MRI_17_Form_Date, MRI_17_Form_Number, \nPay_Entity_Code, MRI_Provider_Code, MRI_Type_Code, \nMRI_Execution_Place, MRI_Execution_Date, \nMRI_Execution_Time, MRI_Decipher_Date, \nMRI_provider_date_request, MRI_provider_date_response, \nMRI_first_available_date, MRI_first_chosen_date, \nMRI_Prev_Appointment_Date, MRI_New_Appointment_Date, \nMRI_device_number  \n\nUsing: //Claim, ClaimResponse, Procedure, DiagnosticReport, Appointment//
+"MRI Provider" -> MoH: Send: MRI_17_Form_Date, MRI_17_Form_Number, \nPay_Entity_Code, MRI_Provider_Code, MRI_Type_Code, \nMRI_Execution_Place, MRI_Execution_Date, \nMRI_Execution_Time, MRI_Decipher_Date, \nMRI_provider_date_request, MRI_provider_date_response, \nMRI_first_available_date, MRI_first_chosen_date, \nMRI_Prev_Appointment_Date, MRI_New_Appointment_Date, \nMRI_device_number  \n\nUsing: //Claim, ClaimResponse, Procedure, DiagnosticReport, Appointment//
 
 @enduml
