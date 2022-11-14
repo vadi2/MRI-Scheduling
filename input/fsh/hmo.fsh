@@ -36,22 +36,24 @@ InstanceOf: Organization
 Usage: #example
 Description: "דוגמה למשאב קופת חולים אמיתי יותר"
 * meta.profile = Canonical(MRIHMO)
-* identifier.system = "http://fhir.health.gov.il/identifier/legal-entity"
-* identifier.value = "500100904"
-* identifier.use = #official
-* address.use = #work
-* address.type = #physical
-* address.text = "ירמיהו 39 ירושלים"
-* address.line = "ירמיהו 39"
-* address.line.extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address.line.extension[=].valueString = "ירמיהו"
-* address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address.line.extension[=].valueString = "39"
-* address.city = "ירושלים"
-* address.city.extension.url = "http://fhir.health.gov.il/StructureDefinition/ext-city-code"
-* address.city.extension.valueCodeableConcept = http://fhir.health.gov.il/cs/city-symbol#3000
-* address.postalCode = "9446724"
-* address.country = "ISR"
+* identifier
+  * system = "http://fhir.health.gov.il/identifier/legal-entity"
+  * value = "500100904"
+  * use = #official
+* address
+  * use = #work
+  * type = #physical
+  * text = "ירמיהו 39 ירושלים"
+  * line = "ירמיהו 39"
+  * line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
+  * line.extension[=].valueString = "ירמיהו"
+  * line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+  * line.extension[=].valueString = "39"
+  * city = "ירושלים"
+    * extension.url = "http://fhir.health.gov.il/StructureDefinition/ext-city-code"
+    * extension.valueCodeableConcept = http://fhir.health.gov.il/cs/city-symbol#3000
+  * postalCode = "9446724"
+  * country = "ISR"
 * active = true
 * name = "משרד הבריאות"
 * telecom.system = #phone
