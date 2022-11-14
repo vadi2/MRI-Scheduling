@@ -48,33 +48,34 @@ Description: "דוגמה למשאב מטופל אמיתי יותר"
 * meta.profile = Canonical(MRIPatient)
 * extension.url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
 * extension.valueCodeableConcept = http://fhir.health.gov.il/cs/paying-entity-moh#103 "קופת חולים מכבי"
-* address.use = #home
-* address.type = #physical
-* address.text = "אלכסנדר פן 1א' דירה 4 תל אביב"
-* address.line = "אלכסנדר פן 1א"
-* address.line.extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
-* address.line.extension[=].valueString = "פן אלכסנדר"
-* address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
-* address.line.extension[=].valueString = "1"
-* address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix"
-* address.line.extension[=].valueString = "א'"
-* address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID"
-* address.line.extension[=].valueString = "4"
-* address.line.extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox"
-* address.line.extension[=].valueString = "1446"
-* address.city = "תל אביב"
-* address.city.extension.url = "http://fhir.health.gov.il/StructureDefinition/ext-city-code"
-* address.city.extension.valueCodeableConcept = http://fhir.health.gov.il/cs/city-symbol#5000
-* address.postalCode = "6964101"
-* address.district = "תל אביב"
-* address.country = "ISR"
+* address
+  * use = #home
+  * type = #physical
+  * text = "אלכסנדר פן 1א' דירה 4 תל אביב"
+  * line = "אלכסנדר פן 1א"
+    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"
+    * extension[=].valueString = "פן אלכסנדר"
+    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"
+    * extension[=].valueString = "1"
+    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix"
+    * extension[=].valueString = "א'"
+    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID"
+    * extension[=].valueString = "4"
+    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox"
+    * extension[=].valueString = "1446"
+  * city = "תל אביב"
+    * extension.url = "http://fhir.health.gov.il/StructureDefinition/ext-city-code"
+    * extension.valueCodeableConcept = http://fhir.health.gov.il/cs/city-symbol#5000
+  * postalCode = "6964101"
+  * district = "תל אביב"
+  * country = "ISR"
 * identifier.system = "http://fhir.health.gov.il/identifier/il-national-id"
 * identifier.value = "000000018"
 * active = true
 * name.family = "כהן"
 * name.given = "תמר"
 * name.text = "תמר כהן"
-* telecom[0].system = #phone
+* telecom[+].system = #phone
 * telecom[=].value = "052467911"
 * telecom[=].use = #home
 * telecom[+].system = #email
