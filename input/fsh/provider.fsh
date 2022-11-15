@@ -27,7 +27,7 @@ Usage: #example
 Description: "דוגמה למשאב מינימלי של ספק MRI התואם את צורכי מדידת ה-MRI"
 * meta.profile = Canonical(MRIProvider)
 * identifier[mriProvider]
-  * system = "http://fhir.health.gov.il/mri/CodeSystem/provider-codes"
+  * system = Canonical(ProviderCodesCodeSystem)
   * value = "1503"
 * active = true
 * name = "בי\"ח האיטלקי נצרת"
