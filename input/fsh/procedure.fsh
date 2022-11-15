@@ -8,7 +8,7 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של ה�
 * performer ^slicing.discriminator.path = "actor.resolve()"
 * performer ^slicing.rules = #open
 * performer ^slicing.ordered = false
-* performer contains mriProvider 1..1
+* performer contains mriProvider 0..1 MS
 * performer[mriProvider] ^short = "Health provider where the MRI took place"
   * actor only Reference(MRIProvider) 
     * ^short = "Reference to the organization"
