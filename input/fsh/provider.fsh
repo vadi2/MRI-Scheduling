@@ -10,6 +10,7 @@ Description: "מטרת פרופיל זה היא להגדיר נציגות של �
 * identifier ^slicing.ordered = false
 * identifier contains mriProvider 1..1
 * identifier[mriProvider]
+  * ^short = "Code identifying the MRI provider"
   * value from ProviderCodesVS (required)
   * system = Canonical(ProviderCodesCodeSystem)
 
@@ -18,6 +19,7 @@ Source:	MRIProvider
 Target: "http://www.gertnerinst.org.il"
 Id: ProviderMapping
 Title: "מיפוי המידע האדמיניסטרטיבי של ספק ה-MRI למודל נתוני רשימת ההמתנה של ה-MRI של גרטנר"
+* identifier[mriProvider] -> "MRI_Provider_Code"
 
 Instance: minimal-provider
 InstanceOf: MRIProvider
