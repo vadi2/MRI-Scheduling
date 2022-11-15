@@ -4,10 +4,15 @@ Id: mri-procedure
 Title: "MRI Procedure"
 // FIXME: auto-translated
 Description: "מטרת פרופיל זה היא להגדיר ייצוג של הליך MRI, כחלק ממעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
-* performer.actor only Reference(MRIHMO)
-* performer.onBehalfOf only Reference(MRIHMO)
-
-// add providers codesystem and valueset
+* performer ^slicing.discriminator.type = #profile
+* performer ^slicing.discriminator.path = "actor.resolve()"
+* performer ^slicing.rules = #open
+* performer ^slicing.ordered = false
+* performer contains mriProvider 1..1
+* performer[mriProvider] ^short = "Health provider where the MRI took place"
+  * actor only Reference(MRIProvider) 
+    * ^short = "Reference to the organization"
+  * onBehalfOf only Reference(MRIProvider)
 
 Mapping: ProcedureToGertner
 Source: MRIProcedure
@@ -23,9 +28,9 @@ Usage: #example
 Description: "דוגמה למשאב מינימלי של הליך התואם את צורכי מדידת ה-MRI"
 * meta.profile = Canonical(MRIProcedure)
 * status = #completed
-* code = #74181 "MRI בטן, לנבדק ליום"
+* code = MedicalServiceMoH#74181 "MRI בטן, לנבדק ליום"
 * subject = Reference(minimal-patient)
 * performedDateTime = "2013-04-05"
 * performer
-  * actor = Reference(minimal-hmo)
-  * onBehalfOf = Reference(minimal-hmo)
+  * actor = Reference(minimal-provider)
+  * onBehalfOf = Reference(minimal-provider)
