@@ -15,7 +15,7 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של ה�
   * onBehalfOf only Reference(MRIProvider)
 * code from MriTypeCodesVS (required)
 * code and location and performedDateTime and report MS
-* code and location MS
+* report only Reference(MRIDiagnosticReport)
 
 Mapping: ProcedureToGertner
 Source: MRIProcedure
@@ -41,3 +41,4 @@ Description: "דוגמה למשאב מינימלי של הליך התואם את
 * performer
   * actor = Reference(minimal-provider)
   * onBehalfOf = Reference(minimal-provider)
+* report = Reference(minimal-diagnosticreport)
