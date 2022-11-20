@@ -14,6 +14,7 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של ה�
     * ^short = "Reference to the organization"
   * onBehalfOf only Reference(MRIProvider)
 * code from MriTypeCodesVS (required)
+* code and location and performedDateTime and report MS
 * code and location MS
 
 Mapping: ProcedureToGertner
@@ -25,6 +26,8 @@ Title: "מיפוי המידע האדמיניסטרטיבי והקליני של �
 * performer.onBehalfOf -> "MRI_Provider_Code"
 * code -> "MRI_Type_Code"
 * location -> "MRI_Execution_Place"
+* performedDateTime -> "MRI_Execution_Date"
+* performedDateTime -> "MRI_Execution_Time"
 
 Instance: minimal-procedure
 InstanceOf: MRIProcedure
