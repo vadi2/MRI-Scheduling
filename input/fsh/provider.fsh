@@ -8,7 +8,7 @@ Description: "מטרת פרופיל זה היא להגדיר נציגות של �
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.ordered = false
-* identifier contains mriProvider 1..1
+* identifier contains mriProvider 0..1 MS
 * identifier[mriProvider]
   * ^short = "Code identifying the MRI provider"
   * value from ProviderCodesVS (required)

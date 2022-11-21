@@ -13,6 +13,9 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של ה�
   * actor only Reference(MRIProvider) 
     * ^short = "Reference to the organization"
   * onBehalfOf only Reference(MRIProvider)
+* code from MriTypeCodesVS (required)
+* code and location and performedDateTime and report MS
+* report only Reference(MRIDiagnosticReport)
 
 Mapping: ProcedureToGertner
 Source: MRIProcedure
@@ -21,6 +24,10 @@ Id: ProcedureMapping
 Title: "מיפוי המידע האדמיניסטרטיבי והקליני של פרוצדורה למודל נתוני רשימת המתנה MRI של גרטנר."
 * performer.actor -> "MRI_Provider_Code"
 * performer.onBehalfOf -> "MRI_Provider_Code"
+* code -> "MRI_Type_Code"
+* location -> "MRI_Execution_Place"
+* performedDateTime -> "MRI_Execution_Date"
+* performedDateTime -> "MRI_Execution_Time"
 
 Instance: minimal-procedure
 InstanceOf: MRIProcedure
@@ -34,3 +41,4 @@ Description: "דוגמה למשאב מינימלי של הליך התואם את
 * performer
   * actor = Reference(minimal-provider)
   * onBehalfOf = Reference(minimal-provider)
+* report = Reference(minimal-diagnosticreport)

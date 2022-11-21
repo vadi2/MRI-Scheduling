@@ -3,7 +3,7 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: il.moh.r4
+id: il.moh.mri.r4
 canonical: http://fhir.health.gov.il/mri
 name: MRI Scheduling
 # title: Example Title
