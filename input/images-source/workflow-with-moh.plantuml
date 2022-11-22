@@ -37,7 +37,7 @@ Patient -> "MRI Provider": <color #grey>request appointment
 Patient -> HMO: <color #grey>request form 17 using referral
 HMO -> Patient: <color #grey>filled form 17 with all details (such as procedure code)
 
-HMO -> MoH: Send: HMO_code, ID_Type_code, Patient_Encrypt_ID, Population_group_code, Birth_Date \nGender_code, Birth_Country_code, Passport_Country_code, City_code, \nPatient_Agas_code, HMO_code, MRI_Referral_date, MRI_Referral_Type_Code, \nMRI_Referral_Reason, MRI_Urgency, MRI_Referral_Private, MRI_Start_Certificate_Center_date,  \nMRI_Confirmation_Code, MRI_Confirmation_Date, MRI_refuse_reason, \nMRI_17_Form_Date, MRI_17_Form_Provider_Code, MRI_17_Form_Number \n\nUsing: //Patient, Organization, AppointmentResponse (+Appointment), //
+HMO -> MoH: Send: HMO_code, ID_Type_code, Patient_Encrypt_ID, Population_group_code, Birth_Date \nGender_code, Birth_Country_code, Passport_Country_code, City_code, \nPatient_Agas_code, HMO_code, MRI_Referral_date, MRI_Referral_Type_Code, \nMRI_Referral_Reason, MRI_Urgency, MRI_Referral_Private, MRI_Start_Certificate_Center_date,  \nMRI_Confirmation_Code, MRI_Confirmation_Date, MRI_refuse_reason, \nMRI_17_Form_Date, MRI_17_Form_Provider_Code, MRI_17_Form_Number \n\nUsing: //Patient, Organization, AppointmentResponse (+Appointment), ServiceRequest,//\n//PractitionerRole, Organization //
 
 == Appointment cancellation (optional)==
 Patient -> "MRI Provider": <color #grey>notify appointment cancellation
