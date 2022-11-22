@@ -2,7 +2,7 @@ Instance: DebugBundleMinimalExamples
 InstanceOf: Bundle
 Usage: #example
 Title: "Bundle all of the minimal examples"
-Description: "Bundle of all of the minimal examples, aggregates together for uploading to a FHIR server or used in visualisation"
+Description: "Bundle of all of the minimal examples, aggregated together for uploading to a FHIR server or used in visualisation"
 * type = #transaction
 
 * entry[+]
