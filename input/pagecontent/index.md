@@ -1,4 +1,4 @@
-Rerum molestiae vel laudantium dolor. Ducimus earum perspiciatis rerum eos velit. Itaque consequatur est explicabo quia quaerat. Consequatur excepturi quos porro esse repudiandae. Reprehenderit aspernatur suscipit omnis. Aspernatur qui qui iure voluptate.
+
 
 ## רקע כללי
 
@@ -7,7 +7,10 @@ Rerum molestiae vel laudantium dolor. Ducimus earum perspiciatis rerum eos velit
 משרד הבריאות מבצע בחינה של המתודולוגיה למדידת זמני המתנה לבדיקות MRI , כחלק מעדכון
 מבחן התמיכה לקיצור זמני המתנה לבדיקות MRI .
 
-## תְחוּם
-Quisquam nostrum quia ea inventore rerum excepturi. Provident veniam sequi quia ab. Qui at iste magnam mollitia quod et dolorem. Eos tempore quis sed. Tempora maiores atque ab quibusdam.
-
-Magnam tempore sit aut eligendi architecto neque. Blanditiis quod magnam dolor qui aliquid. Doloremque tenetur perferendis quas fugiat.
+## תהליך עסקי
+הנתונים נאספים הן מהקופות והן ממכוני הדימות
+התהליך העסקי הינו :
+פניית המטופל לרופא על מנת לקבל הפנייה לבדיקה 1.
+2. שליחת בקשה לקופה על מנת לקבל טופס 17
+3. אישור טופס 17 על ידי הקופה
+4. קביעת תור במכון דימות לצורך ביצוע הבדיקה
