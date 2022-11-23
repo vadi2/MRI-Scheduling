@@ -1,3 +1,4 @@
+<div dir="rtl" markdown="1">
 *fill me in*
 
 Describe how the workflows satisfy the usecases, getting into the technical details here.
@@ -9,3 +10,5 @@ Describe how the workflows satisfy the usecases, getting into the technical deta
 
 <div>{% include workflow-with-moh.svg %}</div>
 <br clear="all"/>
+
+</div>
