@@ -1,5 +1,4 @@
-<div dir="rtl" markdown="1">
-Rerum molestiae vel laudantium dolor. Ducimus earum perspiciatis rerum eos velit. Itaque consequatur est explicabo quia quaerat. Consequatur excepturi quos porro esse repudiandae. Reprehenderit aspernatur suscipit omnis. Aspernatur qui qui iure voluptate.
+R
 
 ## רקע כללי
 זמני המתנה לבדיקות דימות MRI
