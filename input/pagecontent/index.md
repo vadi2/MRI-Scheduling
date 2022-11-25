@@ -11,4 +11,13 @@ Rerum molestiae vel laudantium dolor. Ducimus earum perspiciatis rerum eos velit
 Quisquam nostrum quia ea inventore rerum excepturi. Provident veniam sequi quia ab. Qui at iste magnam mollitia quod et dolorem. Eos tempore quis sed. Tempora maiores atque ab quibusdam.
 
 Magnam tempore sit aut eligendi architecto neque. Blanditiis quod magnam dolor qui aliquid. Doloremque tenetur perferendis quas fugiat.
+
+# table example
+
+| Item         | Price     | # In stock |
+|--------------:|---------:|-----------:|
+| Juicy Apples | 1.99      | *7*        |
+| Bananas      | **1.89**  | 5234       |
+{: .right .grid }
+
 </div>
