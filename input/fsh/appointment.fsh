@@ -8,8 +8,8 @@ Description: "מטרת פרופיל זה היא לייצג תור להליך MRI
 
 Extension: MRIAppointmentDatesRequest
 Id: appointment-dates-request
-Title: "Extension: initial date when the patient contacted and requested available dates for making an appointment"
-Description: "הארכה: מועד ראשוני בו המטופל פנה וביקש תאריכים פנויים לקביעת תור"
+Title: "Extension: initial date when the patient requested available dates for making an appointment"
+Description: "הארכה: מועד ראשוני בו המטופל ביקש תאריכים פנויים לקביעת תור"
 * value[x] only dateTime
 
 Extension: MRIAppointmentDatesResponse
@@ -32,7 +32,10 @@ Description: "דוגמה למשאב זימון מינימלי התואם את צ
 * extension[datesRequest].valueDateTime = "2020-02-07T13:28:17+02:00"
 * extension[datesResponse].valueDateTime = "2020-02-07T20:12:42+02:00"
 * status = #booked
+* slot = Reference(first-available-slot)
+* slot = Reference(first-chosen-slot)
 * participant 
   * actor = Reference(minimal-patient)
   * required = #required
   * status = #accepted
+  
