@@ -16,9 +16,11 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 * ^language = LanguageCS#he "Hebrew"
 * identifier[il-id] MS
 * identifier[pna-id] MS
-* birthDate ^short = "The year of birth for the individual"
-* Gender MS
-* AdministrativeGender MS
+* birthDate MS
+* birthDate ^short = "The year of birth for the individual" 
+* gender MS
+* extension contains
+    patient-genderIdentity named genderIdentity 0..1 MS
 
 
 
@@ -29,6 +31,8 @@ Id: PatientMapping
 Title: "מיפוי המידע האדמיניסטרטיבי של המטופל למודל נתוני רשימת ההמתנה של MRI של גרטנר"
 * identifier[il-id] -> "ID_Type_code"
 * identifier[pna-id] -> "ID_Type_code"
+* gender -> "Gender_code"
+* extension[genderIdentity] -> "Gender_code"
 // TODO: need to map "ID" and "temporary values" 
 
 Instance: minimal-patient
@@ -49,8 +53,8 @@ InstanceOf: MRIPatient
 Usage: #example
 Description: "דוגמה למשאב מטופל אמיתי יותר"
 * meta.profile = Canonical(MRIPatient)
-* extension.url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
-* extension.valueCodeableConcept = http://fhir.health.gov.il/cs/paying-entity-moh#103 "קופת חולים מכבי"
+* extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
+* extension[=].valueCodeableConcept = http://fhir.health.gov.il/cs/paying-entity-moh#103 "קופת חולים מכבי"
 * address
   * use = #home
   * type = #physical
@@ -84,5 +88,7 @@ Description: "דוגמה למשאב מטופל אמיתי יותר"
 * telecom[+].system = #email
 * telecom[=].value = "Israel@example.com"
 * gender = #female
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-genderIdentity"
+* extension[=].valueCodeableConcept =  GenderIdentity#transgender-male
 * birthDate = "2003-04-17"
 * deceasedBoolean = false
