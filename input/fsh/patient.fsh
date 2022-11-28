@@ -16,7 +16,10 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 * ^language = LanguageCS#he "Hebrew"
 * identifier[il-id] MS
 * identifier[pna-id] MS
-* birthDate ^short = "The date of birth for the individual. Can be just the year"
+* birthDate ^short = "The year of birth for the individual"
+* Gender MS
+* AdministrativeGender MS
+
 
 
 Mapping: PatientToGertner
