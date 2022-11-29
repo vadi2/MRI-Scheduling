@@ -6,6 +6,7 @@ Description: "מטרת פרופיל זה היא לייצג תור להליך MRI
 * extension contains MRIAppointmentDatesRequest named datesRequest 0..1 MS
 * extension contains MRIAppointmentDatesResponse named datesResponse 0..1 MS
 * extension contains MRIAppointmentCancellationDate named cancellationDate 0..1 MS
+* cancelationReason MS
 
 Extension: MRIAppointmentDatesRequest
 Id: appointment-dates-request
@@ -35,6 +36,7 @@ Title: "מיפוי מידע קליני על פגישה למודל נתוני ר�
 * extension[datesRequest] -> "MRI_provider_dates_request"
 * extension[datesResponse] -> "MRI_provider_dates_response"
 * extension[cancellationDate] -> "MRI_Cancelation_Date"
+* cancelationReason -> "MRI_cancelation_reason"
 
 Instance: minimal-appointment
 InstanceOf: MRIAppointment
