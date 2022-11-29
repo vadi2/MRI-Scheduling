@@ -13,9 +13,19 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של ה�
   * actor only Reference(MRIProvider) 
     * ^short = "Reference to the organization"
   * onBehalfOf only Reference(MRIProvider)
+
 * code from MriTypeCodesVS (required)
 * code and location and performedDateTime and report MS
 * report only Reference(MRIDiagnosticReport)
+
+* usedCode MS
+* usedCode ^slicing.discriminator.type = #value
+* usedCode ^slicing.discriminator.path = "coding.system"
+* usedCode ^slicing.rules = #open
+* usedCode ^slicing.ordered = false
+* usedCode contains mriDevice 0..1 MS
+* usedCode[mriDevice].coding.system 1..1
+* usedCode[mriDevice].coding.system = MriDeviceNumber
 
 Mapping: ProcedureToGertner
 Source: MRIProcedure
@@ -28,6 +38,7 @@ Title: "מיפוי המידע האדמיניסטרטיבי והקליני של �
 * location -> "MRI_Execution_Place"
 * performedDateTime -> "MRI_Execution_Date"
 * performedDateTime -> "MRI_Execution_Time"
+* usedCode -> "MRI_device_number"
 
 Instance: minimal-procedure
 InstanceOf: MRIProcedure
@@ -42,3 +53,4 @@ Description: "דוגמה למשאב מינימלי של הליך התואם את
   * actor = Reference(minimal-provider)
   * onBehalfOf = Reference(minimal-provider)
 * report = Reference(minimal-diagnosticreport)
+* usedCode = MriDeviceNumber#3451
