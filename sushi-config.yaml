@@ -60,6 +60,8 @@ pages:
     title: בִּטָחוֹן
   5_examples.md:
     title: דוגמאות
+  6_downloads.md:
+    title: הורדות
 
 #
 # The parameters property represents IG.definition.parameter. Rather
@@ -94,6 +96,7 @@ menu:
   בִּטָחוֹן: 4_security.html
   דוגמאות: 5_examples.html
   ישויות: artifacts.html
+  הורדות: 6_downloads.html
   מפרטי בסיס:
     FHIR R4 Spec: new-tab {{site.data.fhir.path}}
     ליבת ישראל: new-tab https://en.fhir-il-community.org/fhir-israel-core
