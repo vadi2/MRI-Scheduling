@@ -20,9 +20,11 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 * birthDate ^short = "The year of birth for the individual" 
 * gender MS
 * extension contains
-    patient-genderIdentity named genderIdentity 0..1 MS
-* extension contains
-    birthPlace named birthPlace 0..1 MS   
+    patient-genderIdentity named genderIdentity 0..1 MS  
+* extension[birthPlace].valueAddress.country from IsraelCountryVS (required)  
+* extension[birthPlace] ^short = "Israeli Country Code" 
+* extension[birthPlace] MS
+
 
 
 
@@ -50,7 +52,8 @@ Description: "דוגמה למשאב מטופל מינימלי התואם לצר�
 * name.text = "שמואל כהן"
 * birthDate = "1952"
 * gender = #female
-* birthPlace = "670"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
+* extension[=].valueAddress.country =  IsraelCountryCodeSystem#670
 
 Instance: patient-with-israeli-id
 InstanceOf: MRIPatient
@@ -96,6 +99,7 @@ Description: "דוגמה למשאב מטופל אמיתי יותר"
 * extension[=].valueCodeableConcept =  GenderIdentity#transgender-male
 * birthDate = "2003-04-17"
 * deceasedBoolean = false
-* birthPlace = "670"
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
-* extension[=].valueCodeableConcept =  birthPlace#670
+* extension[=].valueAddress.country =  IsraelCountryCodeSystem#670
+
+
