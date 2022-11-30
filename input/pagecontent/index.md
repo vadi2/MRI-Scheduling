@@ -20,7 +20,7 @@ Magnam tempore sit aut eligendi architecto neque. Blanditiis quod magnam dolor q
 {: .right .grid }
 
 #### הצהרות IP
+</div>
 
 {% include ip-statements.xhtml %}
 
-</div>
