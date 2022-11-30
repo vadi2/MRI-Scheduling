@@ -12,8 +12,6 @@ Id: mri-patient
 Title: "MRI Patient"
 // FIXME: auto-translated
 Description: "מטרת פרופיל זה היא להגדיר ייצוג של מטופל המבקש לקבל שירות MRI בהקשר של ניטור זמן רשימת ההמתנה של משרד הבריאות הישראלי."
-// the language the profile is in. Does not say that the resource itself should be in Hebrew itself, just that the profile uses Hebrew
-* ^language = LanguageCS#he "Hebrew"
 * identifier[il-id] MS
 * identifier[pna-id] MS
 * birthDate MS
