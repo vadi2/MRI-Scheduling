@@ -21,6 +21,8 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 * gender MS
 * extension contains
     patient-genderIdentity named genderIdentity 0..1 MS
+* extension contains
+    birthPlace named birthPlace 0..1 MS   
 
 
 
@@ -33,6 +35,7 @@ Title: "מיפוי המידע האדמיניסטרטיבי של המטופל ל�
 * identifier[pna-id] -> "ID_Type_code"
 * gender -> "Gender_code"
 * extension[genderIdentity] -> "Gender_code"
+* extension[birthPlace] -> "birth_Country"
 // TODO: need to map "ID" and "temporary values" 
 
 Instance: minimal-patient
@@ -47,6 +50,7 @@ Description: "דוגמה למשאב מטופל מינימלי התואם לצר�
 * name.text = "שמואל כהן"
 * birthDate = "1952"
 * gender = #female
+* birthPlace = "670"
 
 Instance: patient-with-israeli-id
 InstanceOf: MRIPatient
@@ -92,3 +96,6 @@ Description: "דוגמה למשאב מטופל אמיתי יותר"
 * extension[=].valueCodeableConcept =  GenderIdentity#transgender-male
 * birthDate = "2003-04-17"
 * deceasedBoolean = false
+* birthPlace = "670"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
+* extension[=].valueCodeableConcept =  birthPlace#670
