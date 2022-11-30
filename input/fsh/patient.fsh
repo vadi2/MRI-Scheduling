@@ -21,7 +21,8 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 * gender MS
 * extension contains
     patient-genderIdentity named genderIdentity 0..1 MS
- *birthPlace MS   
+* extension contains
+    birthCountry named birthPlace 0..1 MS   
 
 
 
@@ -48,6 +49,7 @@ Description: "דוגמה למשאב מטופל מינימלי התואם לצר�
 * name.text = "שמואל כהן"
 * birthDate = "1952"
 * gender = #female
+* birthPlace = "670"
 
 Instance: patient-with-israeli-id
 InstanceOf: MRIPatient
