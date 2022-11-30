@@ -19,8 +19,4 @@ Magnam tempore sit aut eligendi architecto neque. Blanditiis quod magnam dolor q
 | Bananas      | **1.89**  | 5234       |
 {: .right .grid }
 
-#### הצהרות IP
 </div>
-
-{% include ip-statements.xhtml %}
-

@@ -22,6 +22,7 @@
 ## תלות ב-IG/חבילה
 
 התלות הבאה משמשת בהפקת מדריך זה:
+</div>
 
 {% include dependency-table-short.xhtml %}
 
@@ -32,5 +33,10 @@
 ## Cross version analysis
 
 {% include cross-version-analysis-inline.xhtml %}
+
+#### הצהרות IP
+
+{% include ip-statements.xhtml %}
+
 
 </div>
