@@ -22,7 +22,7 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 * extension contains
     patient-genderIdentity named genderIdentity 0..1 MS
 * extension contains
-    birthCountry named birthPlace 0..1 MS   
+    birthPlace named birthPlace 0..1 MS   
 
 
 
@@ -35,6 +35,7 @@ Title: "מיפוי המידע האדמיניסטרטיבי של המטופל ל�
 * identifier[pna-id] -> "ID_Type_code"
 * gender -> "Gender_code"
 * extension[genderIdentity] -> "Gender_code"
+* extension[birthPlace] -> "birth_Country"
 // TODO: need to map "ID" and "temporary values" 
 
 Instance: minimal-patient
