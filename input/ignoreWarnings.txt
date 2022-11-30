@@ -3,3 +3,12 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+# identifiers valueset is missing a generic device code, and we're not certain if MRI device numbers here will be UDI ones
+WARNING: NamingSystem/mri-device-number: NamingSystem.type: No code provided, and a code should be provided from the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1)
+
+# These codes are in process of being mapped to SNOMED
+WARNING: Procedure/minimal-procedure: Procedure.code: Rule il-procedure-sct: 'Procedure.code.coding SHOULD contain a SNOMED-CT code. Other code systems included in the ValueSet are for historical purposes only' Failed
+
+# checking with gertner if this is a valid code https://github.com/vadi2/MRI-Scheduling/issues/2
+The code L0749 is not valid in the system http://fhir.health.gov.il/cs/medical-service-moh
