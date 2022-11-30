@@ -1,7 +1,7 @@
 Instance: mri-device-number
 InstanceOf: NamingSystem
 Usage: #definition
-* name = "MRI Device Number"
+* name = "MRIDeviceNumber"
 * status = #active
 * kind = #identifier
 * date = "2022-11-29"

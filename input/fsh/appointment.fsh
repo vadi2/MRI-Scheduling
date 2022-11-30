@@ -45,6 +45,8 @@ Description: "דוגמה למשאב זימון מינימלי התואם את צ
 * extension[datesRequest].valueDateTime = "2020-02-07T13:28:17+02:00"
 * extension[datesResponse].valueDateTime = "2020-02-07T20:12:42+02:00"
 * status = #booked
+* start = "2020-02-10T10:00:00+02:00"
+* end = "2020-02-10T11:30:00+02:00"
 * slot[+] = Reference(first-available-slot)
 * slot[+] = Reference(first-chosen-slot)
 * slot[+] = Reference(third-available-slot)
@@ -52,6 +54,7 @@ Description: "דוגמה למשאב זימון מינימלי התואם את צ
   * actor = Reference(minimal-patient)
   * required = #required
   * status = #accepted
+
   
 Instance: cancelled-appointment
 InstanceOf: MRIAppointment

@@ -3,6 +3,7 @@ Id: provider-codes
 Title: "קודים של ספקי MRI"
 Description: "רשימת ספקי MRI מוכרים בישראל."
 * ^caseSensitive = true
+* ^experimental = false
 
 * #1101 "בי\"ח שיבא"
 * #1102 "בי\"ח רמב\"ם"
@@ -54,13 +55,15 @@ Description: "רשימת ספקי MRI מוכרים בישראל."
 ValueSet: ProviderCodesVS
 Id: ProviderCodesVS
 Title: "קודי ספק ValueSet"
-Description: "רשימת קודי שירות רפואי המייצגים פעולות MRI."
+Description: "ערכת ערכים של פעולות MRI זמינות"
+* ^experimental = false
 * include codes from system ProviderCodesCodeSystem
 
 ValueSet: MriTypeCodesVS
 Id: MriTypeCodesVS
 Title: "קודי שירות רפואי MRI ValueSet"
 Description: "TODO"
+* ^experimental = false
 * include MedicalServiceMoH#74181 "MRI בטן, לנבדק ליום"
 * include MedicalServiceMoH#74185 "MRA בטן, תעריף לבדיקה"
 * include MedicalServiceMoH#L2195 "MR אנטרוגרפיה"
@@ -103,6 +106,7 @@ Id: country-codes
 Title: "קודי מדינה ישראליים"
 Description: "קודי מדינה מספריים ישראליים (שונה ממספרי ISO 3166)"
 * ^caseSensitive = true
+* ^experimental = false
 
 * #-999 "לא ידוע"
 * #901 "לא ידוע"
@@ -369,4 +373,5 @@ ValueSet: IsraelCountryVS
 Id: CountryCodesVS
 Title: "קודי מדינה ישראליים ValueSet"
 Description: "קודי מדינה מספריים ישראליים (שונה ממספרי ISO 3166) ValueSet"
+* ^experimental = false
 * include codes from system IsraelCountryCodeSystem

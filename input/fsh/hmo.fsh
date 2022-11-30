@@ -27,6 +27,10 @@ InstanceOf: MRIHMO
 Usage: #example
 Description: "דוגמה למשאב מינימלי של קופת חולים התואם לצרכי מדידת MRI"
 * meta.profile = Canonical(MRIHMO)
+* identifier
+  * system = "http://fhir.health.gov.il/identifier/legal-entity"
+  * value = "500100904"
+  * use = #official
 * active = true
 * name = "שנה אותי"
 * address.text = "שנה אותי"

@@ -21,6 +21,13 @@ Title: "מיפוי של משבצת זמן בודדת הזמינה לפגישה �
 * start -> "MRI_first_available_date"
 * extension[firstChosenSlot] -> "MRI_first_chosen_date"
 
+Instance: minimal-schedule
+InstanceOf: Schedule
+Usage: #example
+Title: "minimal-schedule"
+Description: "תזמן משאב לדוגמה לקיבוץ משאבי חריץ"
+* actor = Reference(minimal-patient)
+
 Instance: first-available-slot
 InstanceOf: Slot
 Usage: #example
@@ -31,6 +38,7 @@ Description: "(see `start`) משבצת פנויה ראשונה לתיאום פג
 * status = #free
 * start = "2022-11-28T13:15:00+02:00"
 * end = "2022-11-28T15:00:00+02:00"
+* schedule = Reference(minimal-schedule)
 
 Instance: first-chosen-slot
 InstanceOf: Slot
@@ -44,6 +52,7 @@ Description: "(see `status = busy` and `start`) משבצת ראשונה נבחר
 * status = #busy
 * start = "2022-11-28T16:00:00+02:00"
 * end = "2022-11-28T16:45:00+02:00"
+* schedule = Reference(minimal-schedule)
 
 Instance: third-available-slot
 InstanceOf: Slot
@@ -55,3 +64,4 @@ Description: "משבצת שלישית פנויה לפגישה שלא נבחרה"
 * status = #free
 * start = "2022-11-29T10:00:00+02:00"
 * end = "2022-11-29T10:45:00+02:00"
+* schedule = Reference(minimal-schedule)
