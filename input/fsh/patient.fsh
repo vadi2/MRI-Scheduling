@@ -22,7 +22,7 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 * extension contains
     patient-genderIdentity named genderIdentity 0..1 MS  
 * extension[birthPlace].valueAddress.country from IsraelCountryVS (required)  
-* extension[birthPlace].valueAddress.country ^short = "Israeli Country Code" 
+* extension[birthPlace].valueAddress.country ^short = "Israeli country code" 
 * extension[birthPlace] MS
 
 
