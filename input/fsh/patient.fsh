@@ -98,4 +98,4 @@ Description: "דוגמה למשאב מטופל אמיתי יותר"
 * deceasedBoolean = false
 * birthPlace = "670"
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
-* extension[=].valueCodeableConcept =  Address.country#670
+* extension[=].valueCodeableConcept =  birthPlace#670
