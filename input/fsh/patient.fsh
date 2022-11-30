@@ -21,6 +21,7 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 * gender MS
 * extension contains
     patient-genderIdentity named genderIdentity 0..1 MS
+ *birthPlace MS   
 
 
 
@@ -92,3 +93,4 @@ Description: "דוגמה למשאב מטופל אמיתי יותר"
 * extension[=].valueCodeableConcept =  GenderIdentity#transgender-male
 * birthDate = "2003-04-17"
 * deceasedBoolean = false
+* birthPlace = "670"
