@@ -12,3 +12,6 @@ WARNING: Procedure/minimal-procedure: Procedure.code: Rule il-procedure-sct: 'Pr
 
 # checking with gertner if this is a valid code https://github.com/vadi2/MRI-Scheduling/issues/2
 The code L0749 is not valid in the system http://fhir.health.gov.il/cs/medical-service-moh
+
+# custom namingsystem for MRI device numbers
+Code System URI 'http://fhir.health.gov.il/identifier/mri-device-number' is unknown so the code cannot be validated
