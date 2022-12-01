@@ -37,6 +37,3 @@
 #### הצהרות IP
 
 {% include ip-statements.xhtml %}
-
-
-</div>
