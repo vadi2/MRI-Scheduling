@@ -370,8 +370,26 @@ Description: "קודי מדינה מספריים ישראליים (שונה ממ
 * #-888 "לא רלוונטי"
 
 ValueSet: IsraelCountryVS
-Id: CountryCodesVS
+Id: IsraelCountryVS
 Title: "קודי מדינה ישראליים ValueSet"
 Description: "קודי מדינה מספריים ישראליים (שונה ממספרי ISO 3166) ValueSet"
 * ^experimental = false
 * include codes from system IsraelCountryCodeSystem
+
+CodeSystem: AppointmentCancelationReasonsCodeSystem
+Id: appointment-cancelation-reasons
+Title: "סיבות לביטול תור"
+Description: "רשימה מרוכזת של סיבות לביטול תור. זה שונה מ https://terminology.hl7.org/4.0.0/CodeSystem-appointment-cancellation-reason.html מכיוון שזוהי מערכת קוד לדוגמה"
+* ^caseSensitive = true
+* ^experimental = false
+
+* #canceled "Appointment canceled"
+* #rebooked "Appointment rebooked for a later date"
+* #other "Other"
+
+ValueSet: AppointmentCancellationReasonVS
+Id: AppointmentCancellationReasonVS
+Title: "של סיבות אפשריות לביטול פגישה"
+Description: "סט ערכי של סיבות אפשריות לביטול פגישה"
+* ^experimental = false
+* include codes from system AppointmentCancelationReasonsCodeSystem
