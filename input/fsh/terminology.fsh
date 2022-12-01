@@ -62,7 +62,7 @@ Description: "ערכת ערכים של פעולות MRI זמינות"
 ValueSet: MriTypeCodesVS
 Id: MriTypeCodesVS
 Title: "קודי שירות רפואי MRI ValueSet"
-Description: "TODO"
+Description: "מערכת ערכית של קודי שירות רפואי זמינים"
 * ^experimental = false
 * include MedicalServiceMoH#74181 "MRI בטן, לנבדק ליום"
 * include MedicalServiceMoH#74185 "MRA בטן, תעריף לבדיקה"
