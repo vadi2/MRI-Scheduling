@@ -384,7 +384,7 @@ Description: "רשימה מרוכזת של סיבות לביטול תור. זה 
 * ^experimental = false
 
 * #canceled "Appointment canceled"
-* #rebooked "Appointment rebooked for a later date"
+* #postponed "Appointment postponed for a later date"
 * #other "Other"
 
 ValueSet: AppointmentCancellationReasonVS
