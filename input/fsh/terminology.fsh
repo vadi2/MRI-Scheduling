@@ -376,14 +376,14 @@ Description: "קודי מדינה מספריים ישראליים (שונה ממ
 * ^experimental = false
 * include codes from system IsraelCountryCodeSystem
 
-CodeSystem: AppointmentCancelationReasonsCodeSystem
+CodeSystem: CancellationReasonCodeSystem
 Id: appointment-cancelation-reasons
 Title: "סיבות לביטול תור"
 Description: "רשימה מרוכזת של סיבות לביטול תור. זה שונה מ https://terminology.hl7.org/4.0.0/CodeSystem-appointment-cancellation-reason.html מכיוון שזוהי מערכת קוד לדוגמה"
 * ^caseSensitive = true
 * ^experimental = false
 
-* #canceled "Appointment canceled"
+* #cancelled "Appointment cancelled"
 * #postponed "Appointment postponed for a later date"
 * #other "Other"
 
@@ -392,4 +392,4 @@ Id: AppointmentCancellationReasonVS
 Title: "של סיבות אפשריות לביטול פגישה"
 Description: "סט ערכי של סיבות אפשריות לביטול פגישה"
 * ^experimental = false
-* include codes from system AppointmentCancelationReasonsCodeSystem
+* include codes from system CancellationReasonCodeSystem

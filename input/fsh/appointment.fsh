@@ -53,30 +53,16 @@ Title: "מיפוי מידע קליני על פגישה למודל נתוני ר�
 * extension[cancellationDate] -> "MRI_Cancelation_Date"
 * supportingInformation.extension[previousAppointment] -> "MRI_Prev_Appointment_Date"
 * cancelationReason -> "MRI_cancelation_reason"
+* extension[datesRequest] -> "MRI_setting_Date"
+* extension[cancellationDate] -> "MRI_Cancelation_Date"
 
-Instance: minimal-appointment
-InstanceOf: MRIAppointment
-Usage: #example
-Description: "דוגמה למשאב זימון מינימלי התואם את צורכי מדידת ה-MRI."
-* extension[datesRequest].valueDateTime = "2020-02-07T13:28:17+02:00"
-* extension[datesResponse].valueDateTime = "2020-02-07T20:12:42+02:00"
-* status = #booked
-* start = "2020-02-10T10:00:00+02:00"
-* end = "2020-02-10T11:30:00+02:00"
-* slot[+] = Reference(first-available-slot)
-* slot[+] = Reference(first-chosen-slot)
-* slot[+] = Reference(third-available-slot)
-* participant 
-  * actor = Reference(minimal-patient)
-  * required = #required
-  * status = #accepted
-* supportingInformation = Reference(cancelled-appointment)
-* supportingInformation.extension[previousAppointment].valueBoolean = true
 
 Instance: cancelled-appointment
 InstanceOf: MRIAppointment
 Usage: #example
-Description: "בוטלה דוגמה למשאב מינימלי לתורים, התואם את צורכי מדידת ה-MRI."
+Description: "דוגמה למשאב מינימלי עבור תור MRI שבוטל (1/3 בסדרה)"
+* extension[datesRequest].valueDateTime = "2020-01-25T08:42:00+02:00"
+* extension[datesResponse].valueDateTime = "2020-01-25T15:37:00+02:00"
 * extension[+].url = Canonical(MRIAppointmentCancellationDate)
 * extension[=].valueDateTime = "2020-01-28T02:24:43+02:00"
 * cancelationReason.text = "Have to bring kids to school"
@@ -86,4 +72,43 @@ Description: "בוטלה דוגמה למשאב מינימלי לתורים, הת
   * required = #required
   * status = #declined
 * start = "2020-01-29T08:45:00+02:00"
-* end = "2020-02-29T09:30:00+02:00"
+* end = "2020-01-29T09:30:00+02:00"
+
+Instance: postponed-appointment
+InstanceOf: MRIAppointment
+Usage: #example
+Title: "postponed-appointment"
+Description: "דוגמה למשאב מינימלי עבור תור MRI שבוטל (1/3 בסדרה)"
+* extension[datesRequest].valueDateTime = "2020-02-05T10:00:00+02:00"
+* extension[datesResponse].valueDateTime = "2020-02-05T12:39:00+02:00"
+* extension[+].url = Canonical(MRIAppointmentCancellationDate)
+* extension[=].valueDateTime = "2020-02-10T13:28:17+02:00"
+* status = #cancelled
+* cancelationReason = CancellationReasonCodeSystem#postponed
+* participant
+  * actor = Reference(minimal-patient)
+  * required = #required
+  * status = #declined
+* start = "2020-02-11T16:00:00+02:00"
+* end = "2020-02-11T16:45:00+02:00"
+
+Instance: minimal-appointment
+InstanceOf: MRIAppointment
+Usage: #example
+Description: "דוגמה למשאב מינימלי לתור MRI שהוזמן ומחכה לקרות (3/3 בסדרה)"
+* extension[datesRequest].valueDateTime = "2020-02-10T13:28:17+02:0"
+* extension[datesResponse].valueDateTime = "2020-02-10T20:12:42+02:00"
+* status = #booked
+* start = "2020-02-16T10:00:00+02:00"
+* end = "2020-02-16T11:30:00+02:00"
+* slot[+] = Reference(first-available-slot)
+* slot[+] = Reference(first-chosen-slot)
+* slot[+] = Reference(third-available-slot)
+* participant 
+  * actor = Reference(minimal-patient)
+  * required = #required
+  * status = #accepted
+* supportingInformation = Reference(cancelled-appointment)
+* supportingInformation.extension[previousAppointment].valueBoolean = true
+* supportingInformation = Reference(postponed-appoiment)
+* supportingInformation.extension[previousAppointment].valueBoolean = true
