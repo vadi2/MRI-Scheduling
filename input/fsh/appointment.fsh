@@ -55,7 +55,7 @@ Title: "מיפוי מידע קליני על פגישה למודל נתוני ר�
 * cancelationReason -> "MRI_cancelation_reason"
 * extension[datesRequest] -> "MRI_setting_Date"
 * extension[cancellationDate] -> "MRI_Cancelation_Date"
-
+* start -> "MRI_New_Appointment_Date"
 
 Instance: cancelled-appointment
 InstanceOf: MRIAppointment
@@ -78,7 +78,7 @@ Instance: postponed-appointment
 InstanceOf: MRIAppointment
 Usage: #example
 Title: "postponed-appointment"
-Description: "דוגמה למשאב מינימלי עבור תור MRI שבוטל (1/3 בסדרה)"
+Description: "דוגמה למשאב מינימלי לתור MRI שנדחה (2/3 בסדרה)"
 * extension[datesRequest].valueDateTime = "2020-02-05T10:00:00+02:00"
 * extension[datesResponse].valueDateTime = "2020-02-05T12:39:00+02:00"
 * extension[+].url = Canonical(MRIAppointmentCancellationDate)
