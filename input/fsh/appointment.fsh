@@ -96,7 +96,7 @@ Instance: minimal-appointment
 InstanceOf: MRIAppointment
 Usage: #example
 Description: "דוגמה למשאב מינימלי לתור MRI שהוזמן ומחכה לקרות (3/3 בסדרה)"
-* extension[datesRequest].valueDateTime = "2020-02-10T13:28:17+02:0"
+* extension[datesRequest].valueDateTime = "2020-02-10T13:28:17+02:00"
 * extension[datesResponse].valueDateTime = "2020-02-10T20:12:42+02:00"
 * status = #booked
 * start = "2020-02-16T10:00:00+02:00"
