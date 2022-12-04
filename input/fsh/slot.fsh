@@ -24,7 +24,7 @@ Title: "מיפוי של משבצת זמן בודדת הזמינה לפגישה �
 * extension[firstChosenSlot] -> "MRI_first_chosen_date"
 
 Instance: first-available-slot
-InstanceOf: Slot
+InstanceOf: MRISlot
 Usage: #example
 Title: "first-available-slot"
 Description: "(see `start`) משבצת פנויה ראשונה לתיאום פגישה"
@@ -35,7 +35,7 @@ Description: "(see `start`) משבצת פנויה ראשונה לתיאום פג
 * schedule.display = "not used"
 
 Instance: first-chosen-slot
-InstanceOf: Slot
+InstanceOf: MRISlot
 Usage: #example
 Title: "first-chosen-slot"
 Description: "(see `status = busy` and `start`) משבצת ראשונה נבחרה לפגישה"
@@ -48,7 +48,7 @@ Description: "(see `status = busy` and `start`) משבצת ראשונה נבחר
 * schedule.display = "not used"
 
 Instance: third-available-slot
-InstanceOf: Slot
+InstanceOf: MRISlot
 Usage: #example
 Title: "third-available-slot"
 Description: "משבצת שלישית פנויה לפגישה שלא נבחרה"
