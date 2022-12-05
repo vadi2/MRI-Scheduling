@@ -12,9 +12,8 @@
 
 
 ## תהליך עסקי
-Quisquam nostrum quia ea inventore rerum excepturi. Provident veniam sequi quia ab. Qui at iste magnam mollitia quod et dolorem. Eos tempore quis sed. Tempora maiores atque ab quibusdam.
-
-Magnam tempore sit aut eligendi architecto neque. Blanditiis quod magnam dolor qui aliquid. Doloremque tenetur perferendis quas fugiat.
+התהליך העסקי כולל איסוף מידע הן מהקופות והן ממכוני ה MRI.
+בשלב הראשון המטופל מבקש הפנייה לבדיקה מרופא הקופה או רופא פרטי.
 
 # table example
 
