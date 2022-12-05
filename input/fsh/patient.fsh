@@ -22,6 +22,9 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 * extension[birthPlace].valueAddress.country from IsraelCountryVS (required)  
 * extension[birthPlace].valueAddress.country ^short = "Israeli country code" 
 * extension[birthPlace] MS
+//* address.city.extension[cityCode] MS
+
+
 
 
 
@@ -36,6 +39,7 @@ Title: "מיפוי המידע האדמיניסטרטיבי של המטופל ל�
 * gender -> "Gender_code"
 * extension[genderIdentity] -> "Gender_code"
 * extension[birthPlace] -> "birth_Country"
+* address.city.extension[cityCode] -> "City_code"
 // TODO: need to map "ID" and "temporary values" 
 
 Instance: minimal-patient
@@ -52,6 +56,8 @@ Description: "דוגמה למשאב מטופל מינימלי התואם לצר�
 * gender = #female
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
 * extension[=].valueAddress.country =  IsraelCountryCodeSystem#670
+* address.city.extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-city-code"
+* address.city.extension[=].valueCodeableConcept = CitySymbol#8
 
 Instance: patient-with-israeli-id
 InstanceOf: MRIPatient
