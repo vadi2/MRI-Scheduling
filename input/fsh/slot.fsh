@@ -23,6 +23,56 @@ Title: "מיפוי של משבצת זמן בודדת הזמינה לפגישה �
 * start -> "MRI_first_available_date"
 * extension[firstChosenSlot] -> "MRI_first_chosen_date"
 
+Instance: cancelled-slot1
+InstanceOf: MRISlot
+Usage: #example
+Title: "cancelled-slot1"
+Description: "אחד משני משבצות הפגישה שנבחר תחילה על ידי המטופל כאפשרות הזמן המועדפת, אך לאחר מכן התור עצמו במועד מאוחר יותר מבוטל על ידי המטופל"
+* meta.profile = Canonical(MRISlot)
+* extension[+].url = Canonical(MRIFirstChosenSlot)
+* extension[=].valueBoolean = true
+* status = #busy
+* start = "2020-01-29T08:45:00+02:00"
+* end = "2020-01-29T09:30:00+02:00"
+* schedule.display = "not used"
+
+Instance: cancelled-slot2
+InstanceOf: MRISlot
+Usage: #example
+Title: "cancelled-slot2"
+Description: "אחד משני משבצות הפגישה שהיו פנויות לפגישה שבוטלה בהמשך"
+* meta.profile = Canonical(MRISlot)
+* status = #free
+* status = #free
+* start = "2020-01-29T10:00:00+02:00"
+* end = "2020-01-29T10:45:00+02:00"
+* schedule.display = "not used"
+
+Instance: postponed-slot1
+InstanceOf: MRISlot
+Usage: #example
+Title: "postponed-slot1"
+Description: "אחד משני משבצות הפגישה שנבחרו בתחילה על ידי המטופל כאפשרות הזמן המועדפת, אך לאחר מכן הפגישה עצמה במועד מאוחר יותר נדחה על ידי המטופל"
+* meta.profile = Canonical(MRISlot)
+* extension[+].url = Canonical(MRIFirstChosenSlot)
+* extension[=].valueBoolean = true
+* status = #busy
+* start = "2020-02-11T16:00:00+02:00"
+* end = "2020-02-11T16:45:00+02:00"
+* schedule.display = "not used"
+
+Instance: postponed-slot2
+InstanceOf: MRISlot
+Usage: #example
+Title: "postponed-slot2"
+Description: "אחד משני משבצות הפגישה שהיו פנויות לפגישה שבוטלה בהמשך"
+* meta.profile = Canonical(MRISlot)
+* status = #free
+* status = #free
+* start = "2020-02-13T09:30:00+02:00"
+* end = "2020-02-13T10:15:00+02:00"
+* schedule.display = "not used"
+
 Instance: first-available-slot
 InstanceOf: MRISlot
 Usage: #example
