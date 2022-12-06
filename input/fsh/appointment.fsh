@@ -3,12 +3,14 @@ Parent: Appointment
 Id: mri-appointment
 Title: "MRI Appointment"
 Description: "מטרת פרופיל זה היא לייצג תור להליך MRI, כחלק ממעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
+// example of using an extension that is defined in this guide
 * extension contains MRIAppointmentDatesRequest named datesRequest 0..1 MS
 * extension contains MRIAppointmentDatesResponse named datesResponse 0..1 MS
 * extension contains MRIAppointmentCancellationDate named cancellationDate 0..1 MS
 * supportingInformation.extension contains MRIPreviousAppointment named previousAppointment 0..1 MS
 * cancelationReason MS
 * slot 1..
+// example of slicing to ensure at least one slot reference uses the MRISlot profile
 * slot ^slicing.discriminator.type = #profile
 * slot ^slicing.discriminator.path = "resolve()"
 * slot ^slicing.rules = #open
@@ -17,7 +19,7 @@ Description: "מטרת פרופיל זה היא לייצג תור להליך MRI
 * slot contains MRISlot 1.. MS
 * slot[MRISlot] only Reference(MRISlot)
 
-
+// example of an extension definition within the guide
 Extension: MRIAppointmentDatesRequest
 Id: appointment-dates-request
 Title: "Initial date when the patient requested available dates for making an appointment"

@@ -57,6 +57,7 @@ InstanceOf: MRIPatient
 Usage: #example
 Description: "דוגמה למשאב מטופל מינימלי התואם לצרכי מדידת MRI"
 * meta.profile = Canonical(MRIPatient)
+// example of the il-id identifier - the system value can be obtained from the ILCore Patient profile
 * identifier.system = "http://fhir.health.gov.il/identifier/il-national-id"
 * identifier.value = "000000018"
 * name.family = "כהן"
@@ -64,8 +65,10 @@ Description: "דוגמה למשאב מטופל מינימלי התואם לצר�
 * name.text = "שמואל כהן"
 * birthDate = "1952"
 * gender = #female
+// example of using an extension that is defined at the root of the Patient resource in the ILCore Patient profile
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
-* extension[=].valueAddress.country =  IsraelCountryCodeSystem#670
+* extension[=].valueAddress.country = IsraelCountryCodeSystem#670
+// example of using an extension that is defined in Patient.address.city
 * address.city.extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-city-code"
 * address.city.extension[=].valueCodeableConcept = CitySymbol#8
 
