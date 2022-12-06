@@ -12,15 +12,22 @@ Id: mri-patient
 Title: "MRI Patient"
 // FIXME: auto-translated
 Description: "מטרת פרופיל זה היא להגדיר ייצוג של מטופל המבקש לקבל שירות MRI בהקשר של ניטור זמן רשימת ההמתנה של משרד הבריאות הישראלי."
+// example of marking a slice defined in IL Core as must support
 * identifier[il-id] MS
 * identifier[pna-id] MS
+// example of marking an element in the Patient resource as must support
 * birthDate MS
+// example of changing the display text in the Patient profile table for an element
 * birthDate ^short = "The year of birth for the individual" 
 * gender MS
-* extension contains
-    patient-genderIdentity named genderIdentity 0..1 MS  
+// example of adding a standard FHIR extension to this profile
+* extension contains patient-genderIdentity named genderIdentity 0..1 MS  
+// example of binding a standard FHIR extension that has already been added in the 
+// parent ILCore Patient profile to a custom valueset
 * extension[birthPlace].valueAddress.country from IsraelCountryVS (required)  
 * extension[birthPlace].valueAddress.country ^short = "Israeli country code" 
+// example of marking a standard FHIR extension that has already been added in the
+// parent ILCore Patient profile as must support
 * extension[birthPlace] MS
 //* address.city.extension[cityCode] MS
 
@@ -34,12 +41,15 @@ Source:	MRIPatient
 Target: "http://www.gertnerinst.org.il"
 Id: PatientMapping
 Title: "מיפוי המידע האדמיניסטרטיבי של המטופל למודל נתוני רשימת ההמתנה של MRI של גרטנר"
+// example of mapping a slice defined in the MRIPatient (or its parent) profile to a value
 * identifier[il-id] -> "ID_Type_code"
 * identifier[pna-id] -> "ID_Type_code"
+// example of mapping an element in the core Patient resource to a value
 * gender -> "Gender_code"
+// example of mapping an extension defined in the MRIPatient (or its parent) profile to a value
 * extension[genderIdentity] -> "Gender_code"
 * extension[birthPlace] -> "birth_Country"
-* address.city.extension[cityCode] -> "City_code"
+//* address.city.extension[cityCode] -> "City_code"
 // TODO: need to map "ID" and "temporary values" 
 
 Instance: minimal-patient
