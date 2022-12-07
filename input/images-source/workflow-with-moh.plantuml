@@ -13,7 +13,7 @@ participant MoH
 
 == Initial appointment==
 Patient -> "HMO Doctor": <color #grey>goes for a consultation
-"HMO Doctor" -> Patient: <color #grey>gives referral (with condition and/or procedure code)
+"HMO Doctor" -> Patient: <color #grey>gives referral
 
 alt Private doctor 
     Patient -> "Private Doctor": <color #grey>goes for a consultation
