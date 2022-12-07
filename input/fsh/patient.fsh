@@ -73,7 +73,8 @@ Description: "דוגמה למשאב מטופל מינימלי התואם לצר�
 // example of using an extension that is defined in Patient.address.city
 * address.city.extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-city-code"
 * address.city.extension[=].valueCodeableConcept = CitySymbol#7 "שחר"
-* hmo = "401"
+* extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
+* extension[=].valueCodeableConcept = paying-entity-moh#101 "כללית"
 
 
 Instance: patient-with-israeli-id
@@ -122,6 +123,7 @@ Description: "דוגמה למשאב מטופל אמיתי יותר"
 * deceasedBoolean = false
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
 * extension[=].valueAddress.country =  IsraelCountryCodeSystem#670
-* hmo = "401"
+* extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
+* extension[=].valueCodeableConcept = paying-entity-moh#101 "כללית"
 
 
