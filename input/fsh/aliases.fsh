@@ -9,7 +9,6 @@ Alias: LanguageCS = urn:ietf:bcp:47
 Alias: MedicalServiceMoH = http://fhir.health.gov.il/cs/medical-service-moh
 Alias: GenderIdentity = http://hl7.org/fhir/gender-identity
 Alias: MriDeviceNumber = http://fhir.health.gov.il/identifier/mri-device-number
-
-
+Alias: ProcessPriority = http://terminology.hl7.org/CodeSystem/processpriority
 
 
