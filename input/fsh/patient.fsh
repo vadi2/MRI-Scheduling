@@ -30,6 +30,7 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 // parent ILCore Patient profile as must support
 * extension[birthPlace] MS
 //* address.city.extension[cityCode] MS
+* extension[hmo] MS
 
 
 
@@ -51,6 +52,7 @@ Title: "מיפוי המידע האדמיניסטרטיבי של המטופל ל�
 * extension[birthPlace] -> "birth_Country"
 //* address.city.extension[cityCode] -> "City_code"
 // TODO: need to map "ID" and "temporary values" 
+* extension[hmo] -> "HMO_Code"
 
 Instance: minimal-patient
 InstanceOf: MRIPatient
@@ -71,6 +73,8 @@ Description: "דוגמה למשאב מטופל מינימלי התואם לצר�
 // example of using an extension that is defined in Patient.address.city
 * address.city.extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-city-code"
 * address.city.extension[=].valueCodeableConcept = CitySymbol#7 "שחר"
+* hmo = "401"
+
 
 Instance: patient-with-israeli-id
 InstanceOf: MRIPatient
@@ -118,5 +122,6 @@ Description: "דוגמה למשאב מטופל אמיתי יותר"
 * deceasedBoolean = false
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
 * extension[=].valueAddress.country =  IsraelCountryCodeSystem#670
+* hmo = "401"
 
 
