@@ -383,9 +383,14 @@ Description: "רשימה מרוכזת של סיבות לביטול תור. זה 
 * ^caseSensitive = true
 * ^experimental = false
 
-* #cancelled "Appointment cancelled"
-* #postponed "Appointment postponed for a later date"
-* #other "Other"
+* #cancelled "הפגישה בוטלה"
+* #patient-postponed "התור נדחה למועד מאוחר יותר מסיבות סבלניות"
+* #patient-cancelled "התור בוטל מסיבות סבלנות"
+* #clinician-postponed "התור נדחה למועד מאוחר יותר מסיבות קלינאי/רופא"
+* #clinician-cancelled "התור בוטל מסיבות של קלינאי/רופא"
+* #device-postponed "התור נדחה למועד מאוחר יותר מסיבות מכשירי MRI"
+* #device-cancelled "התור בוטל מסיבות של מכשיר MRI"
+* #other "סיבה אחרת"
 
 ValueSet: AppointmentCancellationReasonVS
 Id: AppointmentCancellationReasonVS

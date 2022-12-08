@@ -9,6 +9,9 @@ Description: "מטרת פרופיל זה היא לייצג תור להליך MRI
 * extension contains MRIAppointmentCancellationDate named cancellationDate 0..1 MS
 * supportingInformation.extension contains MRIPreviousAppointment named previousAppointment 0..1 MS
 * cancelationReason MS
+* cancelationReason from AppointmentCancellationReasonVS (preferred)
+// see https://confluence.hl7.org/display/PA/2022-12-07+Conference+Call+Minutes
+* cancelationReason.text ^short = "The reason (as text) why the appointment was cancelled"
 * slot 1..
 // example of slicing to ensure at least one slot reference uses the MRISlot profile
 * slot ^slicing.discriminator.type = #profile
@@ -93,6 +96,7 @@ Description: "דוגמה למשאב מינימלי לפגישת MRI מבוטלת
 * extension[datesResponse].valueDateTime = "2020-01-25T15:37:00+02:00"
 * extension[+].url = Canonical(MRIAppointmentCancellationDate)
 * extension[=].valueDateTime = "2020-01-28T07:24:43+02:00"
+* cancelationReason = CancellationReasonCodeSystem#patient-cancelled
 * cancelationReason.text = "Have to bring kids to school"
 * status = #cancelled
 * participant
@@ -130,7 +134,8 @@ Description: "דוגמה למשאב מינימלי לפגישת MRI נדחה (2/
 * extension[+].url = Canonical(MRIAppointmentCancellationDate)
 * extension[=].valueDateTime = "2020-02-10T13:28:00+02:00"
 * status = #cancelled
-* cancelationReason = CancellationReasonCodeSystem#postponed
+* cancelationReason = CancellationReasonCodeSystem#clinician-postponed
+* cancelationReason.text = "Doctor no longer available at the given date"
 * participant
   * actor = Reference(minimal-patient)
   * required = #required
@@ -139,6 +144,8 @@ Description: "דוגמה למשאב מינימלי לפגישת MRI נדחה (2/
 * end = "2020-02-11T16:45:00+02:00"
 * slot[+] = Reference(postponed-slot1)
 * slot[+] = Reference(postponed-slot2)
+* supportingInformation[+] = Reference(cancelled-appointment)
+* supportingInformation[=].extension[previousAppointment].valueBoolean = true
 
 Instance: booked-appointment
 InstanceOf: MRIAppointment
