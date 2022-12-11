@@ -3,7 +3,7 @@ Parent: ILCoreClaim
 Id: mri-claim
 Title: "MRI Claim"
 Description: "מטרת פרופיל זה היא להגדיר ייצוג טופס החזר 17, כחלק ממעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
-* created MS
+* . ^short = "בקשה טופס 17"
 
 
 Mapping: ClaimToGertner

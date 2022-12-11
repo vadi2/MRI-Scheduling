@@ -1,7 +1,7 @@
-CodeSystem: MriConfirmationCodeSystem
+CodeSystem: MRIConfirmationCodeSystem
 Id: mri-confirmation
 Title: "סטטוס אישור MRI"
-Description: "סטטוס אישור MRI על ידי קופת החולים"
+Description: "סטטוס אישור MRI על ידי קופת החולים. ניתן להכליל לפרוצדורות אחרות לפי בקשה"
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -9,9 +9,9 @@ Description: "סטטוס אישור MRI על ידי קופת החולים"
 * #approved "הבקשה אושרה"
 * #rejected "הבקשה נדחתה"
 
-ValueSet: MriConfirmationVS
-Id: MriConfirmationVS
+ValueSet: MRIConfirmationVS
+Id: MRIConfirmationVS
 Title: "סטטוס אישור MRI על ידי קופת החולים"
-Description: "קבוצת ערכים של מצבי אישור MRI אפשריים"
+Description: "סטטוס אישור MRI על ידי קופת החולים. ניתן להכליל לפרוצדורות אחרות לפי בקשה"
 * ^experimental = false
-* include codes from system MriConfirmationCodeSystem
+* include codes from system MRIConfirmationCodeSystem
