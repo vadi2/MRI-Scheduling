@@ -10,8 +10,8 @@ Description: "מטרת הפרופיל היא משבצת זמן פנויה או �
 
 Extension: MRIFirstChosenSlot
 Id: first-chosen-slot
-Title: "FirstChosenSlot"
-Description: "First slot that was chosen by the patient"
+Title: "First appointment slot that is chosen by the patient"
+Description: "הרחבה: משבצת פגישה ראשונה שנבחרה על ידי המטופל מבין כל החלופות המוצעות"
 * value[x] only boolean
 
 

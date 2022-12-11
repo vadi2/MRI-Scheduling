@@ -1,5 +1,6 @@
 Instance: mri-device-number
 InstanceOf: NamingSystem
+Title: "MRI device number"
 Usage: #definition
 * name = "MRIDeviceNumber"
 * status = #active
@@ -8,7 +9,7 @@ Usage: #definition
 * publisher = "Israeli Ministry of Health"
 * responsible = "Israeli Ministry of Health"
 * type.text = "Universal Device Identifier"
-* description = "Device number of the MRI machine"
+* description = "מספר מכשיר של מכשיר ה-MRI"
 * jurisdiction = urn:iso:std:iso:3166#IL
 * usage = "Used in Israel for MRI machines"
 * uniqueId[+].type = #uri

@@ -42,7 +42,7 @@ Description: "הארכה: תאריך שבו נמסרו למטופל תאריכי
 Extension: MRIPreviousAppointment
 Id: previous-appointment
 Title: "The previous appointment date which was rebooked"
-Description: "The previous appointment date which was cancalled/rebooked to this appointment instead. This is to be used only in case an appointment was booked and cancelled/rebooked, and shall not be used to represent a previous appointment that actually occurred."
+Description: "הארכה: תאריך הפגישה הקודם אשר ניתן להתקשר/הוזמנה מחדש לפגישה זו במקום זאת. זה ישמש רק במקרה שבו הוזמנה פגישה ובוטלה/הוזמנה מחדש, ולא ישמש לייצוג פגישה קודמת שהתרחשה בפועל."
 * ^context.type = #element
 * ^context.expression = "Appointment.supportingInformation"
 * value[x] only boolean
