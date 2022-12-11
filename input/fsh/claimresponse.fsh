@@ -21,8 +21,9 @@ Source: MRIClaimResponse
 Target: "http://www.gertnerinst.org.il"
 Id: ClaimResponseMapping
 Title: "מיפוי מידע תגובת תביעה למודל נתוני רשימת ההמתנה של MRI של גרטנר."
-* item.adjudication.category -> "MRI_Confirmation_Code"
 * created -> "MRI_Confirmation_Date"
+* item.adjudication.category -> "MRI_Confirmation_Code"
+* item.adjudication.reason -> "MRI_refuse_reason"
 
 Instance: minimal-claimresponse
 InstanceOf: MRIClaimResponse
@@ -41,3 +42,22 @@ Description: "דוגמה למשאב תגובה מינימלית לתביעה ה�
   * itemSequence = 1
   * adjudication
     * category = MRIConfirmationCodeSystem#approved
+
+Instance: rejected-claimresponse
+InstanceOf: MRIClaimResponse
+Usage: #example
+Description: "דוגמה לתגובת מינימום תביעה שנדחתה"
+* meta.profile = Canonical(MRIClaimResponse)
+* status = #active
+* type = claim-type#institutional
+* use = claim-use#preauthorization
+* patient = Reference(minimal-patient)
+* created = "2015-05-05T14:59:59+02:00"
+* insurer = Reference(minimal-hmo)
+* outcome = #complete
+* request = Reference(minimal-claim)
+* item
+  * itemSequence = 1
+  * adjudication
+    * category = MRIConfirmationCodeSystem#rejected
+    * reason.text = "הכוכבים לא מסתדרים היום"
