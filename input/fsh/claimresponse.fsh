@@ -8,7 +8,8 @@ Description: "מטרת פרופיל זה היא להגדיר את המענה ל�
   * category MS
   * category ^short = "סטטוס אישור MRI"
   * category from MRIConfirmationVS (required)
-* request MS
+* request 1..1 MS
+* request ^short = "טופס בקשה מקורי 17"
 * request only Reference(MRIClaim)
 
 Mapping: ClaimResponseToGertner
