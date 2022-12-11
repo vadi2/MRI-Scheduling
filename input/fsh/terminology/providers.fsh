@@ -1,6 +1,6 @@
 CodeSystem: ProviderCodesCodeSystem
 Id: provider-codes
-Title: "קודים של ספקי MRI"
+Title: "MRI provider codes"
 Description: "רשימת ספקי MRI מוכרים בישראל."
 * ^caseSensitive = true
 * ^experimental = false
@@ -54,7 +54,7 @@ Description: "רשימת ספקי MRI מוכרים בישראל."
 
 ValueSet: ProviderCodesVS
 Id: ProviderCodesVS
-Title: "קודי ספק ValueSet"
+Title: "Provider codes"
 Description: "ערכת ערכים של פעולות MRI זמינות"
 * ^experimental = false
 * include codes from system ProviderCodesCodeSystem

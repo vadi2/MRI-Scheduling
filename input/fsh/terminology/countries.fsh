@@ -1,6 +1,6 @@
 CodeSystem: IsraelCountryCodeSystem
 Id: country-codes
-Title: "קודי מדינה ישראליים"
+Title: "Israeli country codes"
 Description: "קודי מדינה מספריים ישראליים (שונה ממספרי ISO 3166)"
 * ^caseSensitive = true
 * ^experimental = false
@@ -268,7 +268,7 @@ Description: "קודי מדינה מספריים ישראליים (שונה ממ
 
 ValueSet: IsraelCountryVS
 Id: IsraelCountryVS
-Title: "קודי מדינה ישראליים ValueSet"
+Title: "Israeli country codes"
 Description: "קודי מדינה מספריים ישראליים (שונה ממספרי ISO 3166) ValueSet"
 * ^experimental = false
 * include codes from system IsraelCountryCodeSystem

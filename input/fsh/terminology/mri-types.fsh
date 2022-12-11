@@ -1,6 +1,6 @@
 ValueSet: MriTypeCodesVS
 Id: MriTypeCodesVS
-Title: "קודי שירות רפואי MRI ValueSet"
+Title: "MRI medical service codes"
 Description: "מערכת ערכית של קודי שירות רפואי זמינים"
 * ^experimental = false
 * include MedicalServiceMoH#74181 "MRI בטן, לנבדק ליום"

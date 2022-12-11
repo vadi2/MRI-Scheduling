@@ -1,6 +1,6 @@
 CodeSystem: CancellationReasonCodeSystem
 Id: appointment-cancelation-reasons
-Title: "סיבות לביטול תור"
+Title: "Reasons for canceling an appointment"
 Description: "רשימה מרוכזת של סיבות לביטול תור. זה שונה מ https://terminology.hl7.org/4.0.0/CodeSystem-appointment-cancellation-reason.html מכיוון שזוהי מערכת קוד לדוגמה"
 * ^caseSensitive = true
 * ^experimental = false
@@ -16,7 +16,7 @@ Description: "רשימה מרוכזת של סיבות לביטול תור. זה 
 
 ValueSet: AppointmentCancellationReasonVS
 Id: AppointmentCancellationReasonVS
-Title: "של סיבות אפשריות לביטול פגישה"
+Title: "Possible reasons for canceling an appointment"
 Description: "סט ערכי של סיבות אפשריות לביטול פגישה"
 * ^experimental = false
 * include codes from system CancellationReasonCodeSystem
