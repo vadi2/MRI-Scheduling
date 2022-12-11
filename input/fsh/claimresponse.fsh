@@ -14,7 +14,8 @@ Description: "מטרת פרופיל זה היא להגדיר את המענה ל�
 * request 1..1 MS
 * request ^short = "טופס בקשה מקורי 17"
 * request only Reference(MRIClaim)
-* created MS
+* created and insurer MS
+* insurer only Reference(MRIHMO)
 
 Mapping: ClaimResponseToGertner
 Source: MRIClaimResponse
@@ -22,6 +23,7 @@ Target: "http://www.gertnerinst.org.il"
 Id: ClaimResponseMapping
 Title: "מיפוי מידע תגובת תביעה למודל נתוני רשימת ההמתנה של MRI של גרטנר."
 * created -> "MRI_Confirmation_Date"
+* insurer -> "MRI_17_Form_Provider_Code"
 * item.adjudication.category -> "MRI_Confirmation_Code"
 * item.adjudication.reason -> "MRI_refuse_reason"
 
