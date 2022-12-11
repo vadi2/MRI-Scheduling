@@ -4,7 +4,7 @@ Id: mri-claim
 Title: "MRI Claim"
 Description: "מטרת פרופיל זה היא להגדיר ייצוג טופס החזר 17, כחלק ממעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
 * . ^short = "בקשה טופס 17"
-
+* created ^short = "תאריך בקשה לטופס 17 על ידי המטופל"
 
 Mapping: ClaimToGertner
 Source: MRIClaim
