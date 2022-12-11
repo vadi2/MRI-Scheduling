@@ -20,6 +20,7 @@ Usage: #example
   The patient requests form 17 using a referral on 2020-01-01 14:42
 */
 Description: "דוגמה למשאב תביעה מינימלית התואם לצרכי מדידת MRI."
+* meta.profile = Canonical(MRIClaim)
 * status = #active
 * type = claim-type#institutional
 * use = #claim
