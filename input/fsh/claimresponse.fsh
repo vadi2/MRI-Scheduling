@@ -6,8 +6,10 @@ Description: "מטרת פרופיל זה היא להגדיר את המענה ל�
 * . ^short = "תשובה לבקשה טופס 17"
 * item.adjudication
   * category MS
-  * category ^short = "MRI confirmation status"
+  * category ^short = "סטטוס אישור MRI"
   * category from MRIConfirmationVS (required)
+* request MS
+* request only Reference(MRIClaim)
 
 Mapping: ClaimResponseToGertner
 Source: MRIClaimResponse
