@@ -1,7 +1,7 @@
 Profile: MRIClaim
 Parent: ILCoreClaim
 Id: mri-claim
-Title: "MRI claim"
+Title: "MRI Claim"
 Description: "מטרת פרופיל זה היא להגדיר ייצוג טופס החזר 17, כחלק ממעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
 * created MS
 
