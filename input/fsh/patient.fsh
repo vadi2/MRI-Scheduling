@@ -74,7 +74,7 @@ Description: "דוגמה למשאב מטופל מינימלי התואם לצר�
 * address.city.extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-city-code"
 * address.city.extension[=].valueCodeableConcept = CitySymbol#7 "שחר"
 * extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
-* extension[=].valueCodeableConcept = paying-entity-moh#101 "כללית"
+* extension[=].valueCodeableConcept = paying-entity-moh#101 "קופת חולים כללית"
 
 
 Instance: patient-with-israeli-id
@@ -82,8 +82,6 @@ InstanceOf: MRIPatient
 Usage: #example
 Description: "דוגמה למשאב מטופל אמיתי יותר"
 * meta.profile = Canonical(MRIPatient)
-* extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
-* extension[=].valueCodeableConcept = http://fhir.health.gov.il/cs/paying-entity-moh#103 "קופת חולים מכבי"
 * address
   * use = #home
   * type = #physical
@@ -124,6 +122,7 @@ Description: "דוגמה למשאב מטופל אמיתי יותר"
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
 * extension[=].valueAddress.country =  IsraelCountryCodeSystem#670
 * extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
-* extension[=].valueCodeableConcept = paying-entity-moh#101 "כללית"
+* extension[=].valueCodeableConcept = paying-entity-moh#101 "קופת חולים כללית"
+
 
 
