@@ -23,3 +23,4 @@ Description: "דוגמה למשאב תביעה מינימלית התואם לצ�
 * intent = #order
 * subject = Reference(minimal-patient)
 * status = #active
+* authoredOn = "2022-02-09T13:28:17-05:00"
