@@ -4,14 +4,24 @@ Id: mri-claimresponse
 Title: "MRI ClaimResponse"
 Description: "מטרת פרופיל זה היא להגדיר את המענה לטופס 17, כחלק ממעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי"
 * . ^short = "תשובה לבקשה טופס 17"
-* item 1..
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.description = "Slicing to ensure form 17 number is present"
+* identifier ^slicing.ordered = false
+* identifier contains form17 0..1 MS
+* identifier[form17] MS
+  * system = Form17Number
+  * value 1..1 MS
+
+* item
   * adjudication ^short = "פרטי פסיקה"
     * category MS
     * category ^short = "סטטוס אישור MRI"
     * category from MRIConfirmationVS (required)
     * reason MS
     * reason ^short = "הסבר על ההחלטה"
-* request 1..1 MS
+* request MS
 * request ^short = "טופס בקשה מקורי 17"
 * request only Reference(MRIClaim)
 * created and insurer MS
