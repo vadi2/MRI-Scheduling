@@ -12,7 +12,9 @@ Description: "מטרת פרופיל זה היא להגדיר את המענה ל�
 * identifier contains form17 0..1 MS
 * identifier[form17] MS
   * system = Form17Number
-  * value 1..1 MS
+  * value 1..1
+  * value ^short = "Form 17 identifier"
+  * value and system MS
 
 * item
   * adjudication ^short = "פרטי פסיקה"
@@ -57,7 +59,7 @@ Description: "דוגמה למשאב תגובה מינימלית לתביעה ה�
 * item
   * itemSequence = 1
   * adjudication
-    * category = MRIConfirmationCodeSystem#approved
+    * category = MRIConfirmationCodeSystem#approved "הבקשה אושרה"
 
 Instance: rejected-claimresponse
 InstanceOf: MRIClaimResponse
@@ -78,5 +80,5 @@ Description: "דוגמה לתגובת מינימום תביעה שנדחתה"
 * item
   * itemSequence = 1
   * adjudication
-    * category = MRIConfirmationCodeSystem#rejected
+    * category = MRIConfirmationCodeSystem#rejected "הבקשה נדחתה"
     * reason.text = "הכוכבים לא מסתדרים היום"
