@@ -2,7 +2,7 @@ Instance: mri-device-number
 InstanceOf: NamingSystem
 Title: "MRI device number"
 Usage: #definition
-* name = "MRI-device-number"
+* name = "MRI_device_number"
 * status = #active
 * kind = #identifier
 * date = "2022-11-29"
@@ -20,7 +20,7 @@ Instance: form-17
 InstanceOf: NamingSystem
 Title: "Form 17 number"
 Usage: #definition
-* name = "form-17-number"
+* name = "Form_17_number"
 * status = #active
 * kind = #identifier
 * date = "2022-12-12"
