@@ -29,7 +29,7 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 // example of marking a standard FHIR extension that has already been added in the
 // parent ILCore Patient profile as must support
 * extension[birthPlace] MS
-* address.city.extension[citycode] MS
+* address.city.extension[cityCode] MS
 * extension[hmo] MS
 
 
@@ -50,7 +50,7 @@ Title: "מיפוי המידע האדמיניסטרטיבי של המטופל ל�
 // example of mapping an extension defined in the MRIPatient (or its parent) profile to a value
 * extension[genderIdentity] -> "Gender_code"
 * extension[birthPlace] -> "birth_Country"
-* address.city.extension[citycode] -> "City_code"
+* address.city.extension[cityCode] -> "City_code"
 // TODO: need to map "ID" and "temporary values" 
 * extension[hmo] -> "HMO_Code"
 
