@@ -1,109 +1,6 @@
-CodeSystem: ProviderCodesCodeSystem
-Id: provider-codes
-Title: "קודים של ספקי MRI"
-Description: "רשימת ספקי MRI מוכרים בישראל."
-* ^caseSensitive = true
-* ^experimental = false
-
-* #1101 "בי\"ח שיבא"
-* #1102 "בי\"ח רמב\"ם"
-* #1103 "בי\"ח אסף הרופא"
-* #1104 "בי\"ח וולפסון"
-* #1105 "בי\"ח רבקה זיו"
-* #1106 "בי\"ח הלל יפה"
-* #1107 "בי\"ח לגליל  נהריה"
-* #1108 "בי\"ח ברזילי"
-* #1109 "בי\"ח פוריה"
-* #1201 "בי\"ח איכילוב"
-* #1204 "בי\"ח בני ציון"
-* #1301 "בי\"ח בלינסון"
-* #1302 "בי\"ח סורוקה"
-* #1303 "בי\"ח מאיר"
-* #1304 "ב\"ח קפלן"
-* #1305 "ב\"ח העמק"
-* #1401 "בי\"ח הדסה עין כרם"
-* #1402 "בי\"ח הדסה הר הצופים"
-* #1503 "בי\"ח האיטלקי נצרת"
-* #1601 "בי\"ח שערי צדק"
-* #1603 "בי\"ח אל מוקאסד"
-* #1604 "בי\"ח לניאדו"
-* #1606 "בי\"ח מעייני הישועה"
-* #1608 "בי\"ח אסותא אשדוד"
-* #1701 "בי\"ח אסותא ת\"א"
-* #1888 "בי\"ח משגב לדך"
-* #3301 "בי\"ח שניידר"
-* #80001 "אתר באר שבע אסותא"
-* #80002 "אתר דימונה אסותא"
-* #80003 "אתר אילת-אסותא"
-* #80004 "אתר העמק"
-* #80005 "אתר קפלן"
-* #80006 "אתר מאיר"
-* #80007 "אתר באר שבע מור מאר"
-* #80008 "אתר ירושלים"
-* #80009 "אתר קרית שמונה"
-* #80010 "אתר כרמיאל"
-* #80011 "אתר נהריה"
-* #80012 "אתר נצרת"
-* #80013 "אתר הקריון"
-* #80014 "אתר לין"
-* #80015 "אתר הרצליה מדיקל סנטר"
-* #80016 "אתר כרמל"
-* #80017 "אסותא חיפה"
-* #80018 "אתר אור עקיבא"
-* #80019 "אתר אשדוד אסותא"
-
-ValueSet: ProviderCodesVS
-Id: ProviderCodesVS
-Title: "קודי ספק ValueSet"
-Description: "ערכת ערכים של פעולות MRI זמינות"
-* ^experimental = false
-* include codes from system ProviderCodesCodeSystem
-
-ValueSet: MriTypeCodesVS
-Id: MriTypeCodesVS
-Title: "קודי שירות רפואי MRI ValueSet"
-Description: "מערכת ערכית של קודי שירות רפואי זמינים"
-* ^experimental = false
-* include MedicalServiceMoH#74181 "MRI בטן, לנבדק ליום"
-* include MedicalServiceMoH#74185 "MRA בטן, תעריף לבדיקה"
-* include MedicalServiceMoH#L2195 "MR אנטרוגרפיה"
-* include MedicalServiceMoH#L2196 "MRI אגן\\אברי מין, למעט ערמונית"
-* include MedicalServiceMoH#L2197 "MRI ערמונית"
-* include MedicalServiceMoH#72198 "MRA אגן, תעריף לבדיקה"
-* include MedicalServiceMoH#70540 "MRI ארובות עיניים, פנים וצואר"
-* include MedicalServiceMoH#70544 "MRA מוח, תעריף לבדיקה"
-* include MedicalServiceMoH#70547 "MRA ראש ו\\או צואר, תעריף לבדיקה"
-* include MedicalServiceMoH#70551 "MRI מוח, כולל גזע המוח"
-* include MedicalServiceMoH#72141 "MRI תעלה ועמוד שדרה צוארי, לנבדק ליום"
-* include MedicalServiceMoH#72146 "MRI תעלה ועמוד שדרה גבי, לנבדק ליום"
-* include MedicalServiceMoH#72148 "MRI תעלה ועמוד שדרה מותני, לנבדק ליום"
-* include MedicalServiceMoH#72159 "MRA תעלת עמוד שדרה ותכולתה, תעריף לבדיקה"
-* include MedicalServiceMoH#76390 "MRI ספקטרוסקופיה, לנבדק ליום"
-* include MedicalServiceMoH#L0554 "MRI דימות תפקודי, FMRI"
-* include MedicalServiceMoH#77059 "MRI שד, דו צדדי"
-* include MedicalServiceMoH#19085 "ביופסיה של השד בהנחיית MRI, תעריף לשד אחד"
-* include MedicalServiceMoH#73221 "MRI מפרקי הגף העליון, לנבדק ליום"
-* include MedicalServiceMoH#73225 "MRA גף עליון, תעריף לבדיקה"
-* include MedicalServiceMoH#73721 "MRI מפרקי הגף התחתון, לנבדק ליום"
-* include MedicalServiceMoH#73725 "MRA גף תחתון, תעריף לבדיקה"
-* include MedicalServiceMoH#70336 "MRI מפרק\\י הלסת"
-* include MedicalServiceMoH#L0550 "MR ארתרוגרפיה"
-* include MedicalServiceMoH#71550 "MRI בית החזה"
-* include MedicalServiceMoH#71555 "MRA בית החזה, למעט שריר הלב, תעריף לבדיקה"
-* include MedicalServiceMoH#75552 "MRI מבנה לב, לנבדק ליום"
-* include MedicalServiceMoH#75554 "MRI תפקוד לב, ללא\\עם מבנה, מבחן מלא, לנבדק ליום"
-* include MedicalServiceMoH#L0444 "MRI, בדיקה במערכת תהודה מגנטית, למעט בדיקות להן קוד מיוחד"
-* include MedicalServiceMoH#L0446 "MRI בהרדמה כללית, תעריף לבדיקה"
-* include MedicalServiceMoH#L2190 "MRI מיילדותי להדגמת העובר, תעריף לעובר אחד"
-* include MedicalServiceMoH#77021 "ביופסיה\\פעולה כירורגית בהנחיית MRI, למעט שד, במסגרת אמבולטורית"
-* include MedicalServiceMoH#L0745 "תוספת עבור בדיקת MRI לנבדק עם קוצב לב"
-* include MedicalServiceMoH#L0748 "תוספת עבור חומר ניגוד לבדיקת MRI"
-* include MedicalServiceMoH#G00R3 "ביופסיה בהנחיית MRI, למעט שד, באשפוז"
-* include MedicalServiceMoH#L0749 "MRI, תוספת לבדיקה עם גדוליניום"
-
 CodeSystem: IsraelCountryCodeSystem
 Id: country-codes
-Title: "קודי מדינה ישראליים"
+Title: "Israeli country codes"
 Description: "קודי מדינה מספריים ישראליים (שונה ממספרי ISO 3166)"
 * ^caseSensitive = true
 * ^experimental = false
@@ -371,30 +268,7 @@ Description: "קודי מדינה מספריים ישראליים (שונה ממ
 
 ValueSet: IsraelCountryVS
 Id: IsraelCountryVS
-Title: "קודי מדינה ישראליים ValueSet"
+Title: "Israeli country codes"
 Description: "קודי מדינה מספריים ישראליים (שונה ממספרי ISO 3166) ValueSet"
 * ^experimental = false
 * include codes from system IsraelCountryCodeSystem
-
-CodeSystem: CancellationReasonCodeSystem
-Id: appointment-cancelation-reasons
-Title: "סיבות לביטול תור"
-Description: "רשימה מרוכזת של סיבות לביטול תור. זה שונה מ https://terminology.hl7.org/4.0.0/CodeSystem-appointment-cancellation-reason.html מכיוון שזוהי מערכת קוד לדוגמה"
-* ^caseSensitive = true
-* ^experimental = false
-
-* #cancelled "הפגישה בוטלה"
-* #patient-postponed "התור נדחה למועד מאוחר יותר מסיבות סבלניות"
-* #patient-cancelled "התור בוטל מסיבות סבלנות"
-* #clinician-postponed "התור נדחה למועד מאוחר יותר מסיבות קלינאי/רופא"
-* #clinician-cancelled "התור בוטל מסיבות של קלינאי/רופא"
-* #device-postponed "התור נדחה למועד מאוחר יותר מסיבות מכשירי MRI"
-* #device-cancelled "התור בוטל מסיבות של מכשיר MRI"
-* #other "סיבה אחרת"
-
-ValueSet: AppointmentCancellationReasonVS
-Id: AppointmentCancellationReasonVS
-Title: "של סיבות אפשריות לביטול פגישה"
-Description: "סט ערכי של סיבות אפשריות לביטול פגישה"
-* ^experimental = false
-* include codes from system CancellationReasonCodeSystem

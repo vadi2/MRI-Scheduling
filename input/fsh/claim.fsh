@@ -1,10 +1,10 @@
 Profile: MRIClaim
 Parent: ILCoreClaim
 Id: mri-claim
-Title: "MRI claim"
+Title: "MRI Claim"
 Description: "מטרת פרופיל זה היא להגדיר ייצוג טופס החזר 17, כחלק ממעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
-* created MS
-
+* . ^short = "בקשה טופס 17"
+* created ^short = "תאריך בקשה לטופס 17 על ידי המטופל"
 
 Mapping: ClaimToGertner
 Source: MRIClaim
@@ -20,6 +20,7 @@ Usage: #example
   The patient requests form 17 using a referral on 2020-01-01 14:42
 */
 Description: "דוגמה למשאב תביעה מינימלית התואם לצרכי מדידת MRI."
+* meta.profile = Canonical(MRIClaim)
 * status = #active
 * type = claim-type#institutional
 * use = #claim
