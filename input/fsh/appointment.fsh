@@ -12,14 +12,13 @@ Description: "מטרת פרופיל זה היא לייצג תור להליך MRI
 * cancelationReason from AppointmentCancellationReasonVS (preferred)
 // see https://confluence.hl7.org/display/PA/2022-12-07+Conference+Call+Minutes
 * cancelationReason.text ^short = "The reason (as text) why the appointment was cancelled"
-* slot 1..
 // example of slicing to ensure at least one slot reference uses the MRISlot profile
 * slot ^slicing.discriminator.type = #profile
 * slot ^slicing.discriminator.path = "resolve()"
 * slot ^slicing.rules = #open
 * slot ^slicing.description = "Slicing to ensure that at least one MRI Slot reference exists"
 * slot ^slicing.ordered = false
-* slot contains MRISlot 1.. MS
+* slot contains MRISlot 0..1 MS
 * slot[MRISlot] only Reference(MRISlot)
 
 // example of an extension definition within the guide
