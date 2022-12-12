@@ -36,12 +36,16 @@ Title: "מיפוי מידע תגובת תביעה למודל נתוני רשימ
 * insurer -> "MRI_17_Form_Provider_Code"
 * item.adjudication.category -> "MRI_Confirmation_Code"
 * item.adjudication.reason -> "MRI_refuse_reason"
+* identifier[form17] -> "MRI_17_Form_Number"
 
 Instance: minimal-claimresponse
 InstanceOf: MRIClaimResponse
 Usage: #example
 Description: "דוגמה למשאב תגובה מינימלית לתביעה התואם לצרכי מדידת MRI."
 * meta.profile = Canonical(MRIClaimResponse)
+* identifier
+  * system = Form17Number
+  * value = "12345"
 * status = #active
 * type = claim-type#institutional
 * use = claim-use#preauthorization
@@ -60,6 +64,9 @@ InstanceOf: MRIClaimResponse
 Usage: #example
 Description: "דוגמה לתגובת מינימום תביעה שנדחתה"
 * meta.profile = Canonical(MRIClaimResponse)
+* identifier
+  * system = Form17Number
+  * value = "12345"
 * status = #active
 * type = claim-type#institutional
 * use = claim-use#preauthorization
