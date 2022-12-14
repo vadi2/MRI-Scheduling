@@ -31,7 +31,7 @@ Patient -> "MRI Provider": <color #grey>check appointment dates (with 1..* provi
 Patient -> "MRI Provider": <color #grey>request appointment
 "MRI Provider" -> Patient: <color #grey>confirm appointment
 
-"MRI Provider" -> MoH: Send: MRI_Provider_Code, ID_Type_code, Patient_Encrypt_ID, \nPopulation_group_code, Birth_Date, Gender_code, \nGender_code, Birth_Country_code, Passport_Country_code, \nCity_code, Patient_full_address, Patient_Agas_code, \nMRI_Referral_date, MRI_Referral_Type_Code, MRI_Referral_Reason, \nMRI_Urgency\n\nUsing: //Location, Patient, ServiceRequest//
+"MRI Provider" -> MoH: Send: MRI_Provider_Code, ID_Type_code, Patient_Encrypt_ID, \nPopulation_group_code, Birth_Date, Gender_code, \nGender_code, Birth_Country_code, Passport_Country_code, \nCity_code, Patient_full_address, Patient_Agas_code, \nMRI_Referral_date, MRI_Referral_Type_Code, MRI_Referral_Reason, \nMRI_Urgency\n\nUsing: //Location, Patient, Appointment, AppointmentResponse, ServiceRequest//
 
 == Form 17==
 Patient -> HMO: <color #grey>request form 17 using referral
