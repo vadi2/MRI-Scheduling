@@ -22,6 +22,7 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של מ�
 * gender MS
 // example of adding a standard FHIR extension to this profile
 * extension contains patient-genderIdentity named genderIdentity 0..1 MS  
+* extension contains patient-citizenship named Passport_Country_code 0..1 MS
 // example of binding a standard FHIR extension that has already been added in the 
 // parent ILCore Patient profile to a custom valueset
 * extension[birthPlace].valueAddress.country from IsraelCountryVS (required)  
@@ -50,6 +51,7 @@ Title: "מיפוי המידע האדמיניסטרטיבי של המטופל ל�
 // example of mapping an extension defined in the MRIPatient (or its parent) profile to a value
 * extension[genderIdentity] -> "Gender_code"
 * extension[birthPlace] -> "birth_Country"
+* extension[Passport_Country_code] -> "Passport_Country_code"
 * address.city.extension[citycode] -> "City_code"
 // TODO: need to map "ID" and "temporary values" 
 * extension[hmo] -> "HMO_Code"
@@ -117,10 +119,12 @@ Description: "דוגמה למשאב מטופל אמיתי יותר"
 * gender = #female
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-genderIdentity"
 * extension[=].valueCodeableConcept =  GenderIdentity#transgender-male
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-citizenship"
+* extension[=].valueCodeableConcept = IsraelCountryCodeSystem#510 "אוסטריה"
 * birthDate = "2003-04-17"
 * deceasedBoolean = false
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"
-* extension[=].valueAddress.country =  IsraelCountryCodeSystem#670
+* extension[=].valueAddress.country =  IsraelCountryCodeSystem#670 "איטליה"
 * extension[+].url = "http://fhir.health.gov.il/StructureDefinition/ext-il-hmo"
 * extension[=].valueCodeableConcept = paying-entity-moh#101 "קופת חולים כללית"
 
