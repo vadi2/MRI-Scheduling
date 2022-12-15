@@ -50,8 +50,8 @@ Description: "הארכה: תאריך הפגישה הקודם אשר ניתן ל�
 // and this extension is modelled after the one WG decided on
 Extension: MRIAppointmentCancellationDate
 Id: appointment-cancellation-date
-Title: "The date/time describing when the appointment was cancelled"
-Description: "הארכה: התאריך/שעה המתארים מתי הפגישה בוטלה"
+Title: "The date/time when the appointment was cancelled"
+Description: "הארכה: התאריך/שעה שבהם הפגישה בוטלה"
 * ^context.type = #element
 * ^context.expression = "Appointment"
 * value[x] only dateTime
