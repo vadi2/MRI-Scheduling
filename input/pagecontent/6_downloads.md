@@ -37,3 +37,5 @@
 #### הצהרות IP
 
 {% include ip-statements.xhtml %}
+
+{% include markdown-link-references.md %}

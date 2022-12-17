@@ -90,3 +90,5 @@
 {: .right .grid }
 
 </div>
+
+{% include markdown-link-references.md %}
