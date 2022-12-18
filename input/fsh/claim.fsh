@@ -34,5 +34,5 @@ Description: "דוגמה למשאב תביעה מינימלית התואם לצ�
   * coverage
     // example of using an extension in place of an actual Reference if it's not available
     * extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
-    * extension.valueCode = data-absent-reason#unknown "Unknown" 
-    * display = "Coverage information is unknown"
+    * extension.valueCode = data-absent-reason#not-applicable "Not Applicable" 
+    * display = "Coverage information is not applicable here and can be derived from the HMO code"

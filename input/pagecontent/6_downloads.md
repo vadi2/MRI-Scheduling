@@ -26,11 +26,11 @@
 
 {% include dependency-table-short.xhtml %}
 
-## Globals table
+## טבלת גלובלים
 
 {% include globals-table.xhtml %}
 
-## Cross version analysis
+## ניתוח R4-R4B
 
 {% include cross-version-analysis-inline.xhtml %}
 

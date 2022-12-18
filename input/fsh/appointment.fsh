@@ -50,8 +50,8 @@ Description: "הארכה: תאריך הפגישה הקודם אשר ניתן ל�
 // and this extension is modelled after the one WG decided on
 Extension: MRIAppointmentCancellationDate
 Id: appointment-cancellation-date
-Title: "The date/time describing when the appointment was cancelled"
-Description: "הארכה: התאריך/שעה המתארים מתי הפגישה בוטלה"
+Title: "The date/time when the appointment was cancelled"
+Description: "הארכה: התאריך/שעה שבהם הפגישה בוטלה"
 * ^context.type = #element
 * ^context.expression = "Appointment"
 * value[x] only dateTime
@@ -93,8 +93,7 @@ Description: "דוגמה למשאב מינימלי לפגישת MRI מבוטלת
 בתאריך 2020-01-28 07:24:43, המטופל ביטל את הפגישה כי נאלץ להביא את ילדיו לבית הספר באופן בלתי צפוי."
 * extension[datesRequest].valueDateTime = "2020-01-25T08:42:00+02:00"
 * extension[datesResponse].valueDateTime = "2020-01-25T15:37:00+02:00"
-* extension[+].url = Canonical(MRIAppointmentCancellationDate)
-* extension[=].valueDateTime = "2020-01-28T07:24:43+02:00"
+* extension[cancellationDate].valueDateTime = "2020-01-28T07:24:43+02:00"
 * cancelationReason = CancellationReasonCodeSystem#patient-cancelled
 * cancelationReason.text = "Have to bring kids to school"
 * status = #cancelled
@@ -130,8 +129,7 @@ Description: "דוגמה למשאב מינימלי לפגישת MRI נדחה (2/
 ביום 2020-02-10 13:28, המטופל דחה את התור."
 * extension[datesRequest].valueDateTime = "2020-02-05T10:00:00+02:00"
 * extension[datesResponse].valueDateTime = "2020-02-05T12:39:00+02:00"
-* extension[+].url = Canonical(MRIAppointmentCancellationDate)
-* extension[=].valueDateTime = "2020-02-10T13:28:00+02:00"
+* extension[cancellationDate].valueDateTime = "2020-02-10T13:28:00+02:00"
 * status = #cancelled
 * cancelationReason = CancellationReasonCodeSystem#clinician-postponed
 * cancelationReason.text = "Doctor no longer available at the given date"
