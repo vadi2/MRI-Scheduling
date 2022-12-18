@@ -96,7 +96,7 @@ parameters:
 menu:
   דף הבית: index.html
   מקרי שימוש: 2_use-cases.html
-  זרימות עבודה: 3_workflows.html
+  תהליך עבודה: 3_workflows.html
   בִּטָחוֹן: 4_security.html
   דוגמאות: 5_examples.html
   ישויות: artifacts.html
