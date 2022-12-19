@@ -5,6 +5,7 @@ Title: "MRI Slot"
 Description: "מטרת הפרופיל היא משבצת זמן פנויה או משומשת להליך MRI, כחלק ממעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
 * schedule and status and start and end MS
 * extension contains MRIFirstChosenSlot named firstChosenSlot 0..1 MS
+// see https://chat.fhir.org/#narrow/stream/179166-implementers/topic/.E2.9C.94.20mandatory.20Schedule.20for.20a.20Slot
 * schedule.display = "not used"
 
 
