@@ -24,3 +24,5 @@
   * example - [cancellationDate](https://jira.hl7.org/browse/FHIR-38731)
 * otherwise should the relevance too tightly scoped to the MRI project, define it as an example
   * example - when the patient first reached out for available appointment dates extension
+* keep the amount of warnings/errors/informational messages in the QA report down to 0
+  * if the issue is not applicable - add it to the `ignoreWarnings.txt` file
