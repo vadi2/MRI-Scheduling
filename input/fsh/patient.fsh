@@ -10,7 +10,6 @@ Parent: ILCorePatient
 Id: mri-patient
 // human-readable name - titlecase with spaces
 Title: "MRI Patient"
-// FIXME: auto-translated
 Description: "מטרת פרופיל זה היא להגדיר ייצוג של מטופל המבקש לקבל שירות MRI בהקשר של ניטור זמן רשימת ההמתנה של משרד הבריאות הישראלי."
 // example of marking a slice defined in IL Core as must support
 * identifier[il-id] MS

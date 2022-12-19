@@ -2,7 +2,6 @@ Profile: MRIProcedure
 Parent: ILCoreProcedure
 Id: mri-procedure
 Title: "MRI Procedure"
-// FIXME: auto-translated
 Description: "מטרת פרופיל זה היא להגדיר ייצוג של הליך MRI, כחלק ממעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
 * performer ^slicing.discriminator.type = #profile
 * performer ^slicing.discriminator.path = "actor.resolve()"

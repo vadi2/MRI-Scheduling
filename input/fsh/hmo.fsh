@@ -10,7 +10,6 @@ Parent: ILCoreOrganization
 Id: mri-hmo
 // human-readable name - titlecase with spaces
 Title: "MRI HMO"
-// FIXME: auto-translated
 Description: "מטרת פרופיל זה היא להגדיר ייצוג של קופת חולים המאשרת שירות MRI, במסגרת מעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
 * identifier[moe-inst] MS 
 

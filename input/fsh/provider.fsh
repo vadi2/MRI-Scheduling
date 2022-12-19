@@ -2,7 +2,6 @@ Profile: MRIProvider
 Parent: ILCoreOrganization
 Id: mri-provider
 Title: "MRI Provider"
-// FIXME: auto-translated
 Description: "מטרת פרופיל זה היא להגדיר נציגות של ארגון בריאות המספק שירות MRI, כחלק ממעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
