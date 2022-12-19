@@ -3,12 +3,11 @@ Parent: ILCoreServiceRequest
 Id: mri-servicerequest
 Title: "MRI Service Request"
 Description: "מטרת פרופיל זה היא להגדיר ייצוג טופס החזר 17, כחלק ממעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
-* intent and authoredOn and code and reasonCode and priority MS
+* intent and authoredOn and code and reasonCode and priority and requester MS
 * reasonCode from MriTypeCodesVS (preferred) 
 * reasonCode ^short = "5 or 9 digits MRI procedure code or condition code"
 * code from MriTypeCodesVS (preferred) 
 * code ^short = "5 or 9 digits MRI procedure code"
-
 
 Mapping: ServiceRequestToGertner
 Source: MRIServiceRequest
@@ -19,7 +18,7 @@ Title: "מיפוי מידע ניהולי של תביעה למודל הנתוני
 * code -> "MRI_Referral_Type_Code"
 * reasonCode -> "MRI_Referral_Reason"
 * priority -> "MRI_Urgency"
-
+* requester -> "MRI_Referral_Private"
 
 Instance: minimal-servicerequest
 InstanceOf: MRIServiceRequest
@@ -35,3 +34,4 @@ Description: "דוגמה למשאב תביעה מינימלית התואם לצ�
 * code = MedicalServiceMoH#74181 "MRI בטן, לנבדק ליום"
 * reasonCode = MedicalServiceMoH#74181 "MRI בטן, לנבדק ליום"
 * priority = #stat
+* requester = Reference(minimal-hmo)
