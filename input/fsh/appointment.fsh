@@ -83,6 +83,7 @@ Usage: #example
   
   On 2020-01-28 07:24:43, the patient cancelled the appointment because they had unexpectedly to bring their kids to school.
 */
+/* (1/2) - see also 3_workflows.md */
 Description: "דוגמה למשאב מינימלי לפגישת MRI מבוטלת (1/3 מהסדרה).
 
 המטופל ביקש תאריכי תור פנויים ב-2020-01-25 08:42, וקיבל אותם ב-2020-01-25 15:37, שהיו:
@@ -119,6 +120,7 @@ Usage: #example
   
   On 2020-02-10 13:28, the patient postponed the appointment.
 */
+/* (1/2) - see also 3_workflows.md */
 Description: "דוגמה למשאב מינימלי לפגישת MRI נדחה (2/3 מהסדרה).
 
 המטופל ביקש תאריכי תור פנויים ב-2020-02-05 10:00, וקיבל אותם ב-2020-02-05 12:39, שהם:
@@ -144,11 +146,11 @@ Description: "דוגמה למשאב מינימלי לפגישת MRI נדחה (2/
 * supportingInformation[+] = Reference(cancelled-appointment)
 * supportingInformation[=].extension[previousAppointment].valueBoolean = true
 
-Instance: booked-appointment
+Instance: fulfilled-appointment
 InstanceOf: MRIAppointment
 Usage: #example
 /* 
-  Example of a minimum resource of a booked MRI appointment (3/3 of the series). The previous two appointments were postponed or cancelled.
+  Example of a minimum resource of a fulfilled MRI appointment (3/3 of the series). The previous two appointments were postponed or cancelled.
   
   The patient requested available appointment dates at 2020-02-10 13:28:17, and received them at 2020-02-10 20:12:42+02:00, which were:
   
@@ -156,20 +158,22 @@ Usage: #example
   2. 2022-11-28 16:00 (chosen by the patient)
   3. 2022-11-29 10:00
 
-  On 2020-02-10 13:28, the patient postponed the appointment.
+  The appointment lasted from 2022-11-28 16:00 to 16:45.
+
 */
-Description: "דוגמה למשאב מינימלי של תור MRI מוזמן (3/3 מהסדרה). שני המינויים הקודמים נדחו או בוטלו.
+/* (1/2) - see also 3_workflows.md */
+Description: "דוגמה למשאב מינימלי של מינוי MRI (3/3 מהסדרה). שני המינויים הקודמים נדחו או בוטלו.
   
-המטופל ביקש תאריכי תור פנויים ב-2020-02-10 13:28:17, וקיבל אותם ב-2020-02-10 20:12:42+02:00, שהיו:
+   המטופל ביקש תאריכי תור פנויים ב-2020-02-10 13:28:17, וקיבל אותם ב-2020-02-10 20:12:42+02:00, שהיו:
+  
+   1. 28-11-2022 13:15
+   2. 2022-11-28 16:00 (נבחר על ידי המטופל)
+   3. 29-11-2022 10:00
 
-1. 2022-11-28 13:15
-2. 2022-11-28 16:00 (נבחר על ידי המטופל)
-3. 2022-11-29 10:00
-
-ביום 2020-02-10 13:28, המטופל דחה את התור."
+   המינוי נמשך מ-28-11-2022 בין השעות 16:00-16:45."
 * extension[datesRequest].valueDateTime = "2020-02-10T13:28:17+02:00"
 * extension[datesResponse].valueDateTime = "2020-02-10T20:12:42+02:00"
-* status = #booked
+* status = #fulfilled
 * start = "2022-11-28T16:00:00+02:00"
 * end = "2022-11-28T16:45:00+02:00"
 * slot[+] = Reference(first-available-slot)

@@ -28,7 +28,7 @@
 [postponed-slot1]: Slot-postponed-slot1.json.html
 [rejected-claimresponse]: ClaimResponse-rejected-claimresponse.json.html
 [cancelled-slot1]: Slot-cancelled-slot1.json.html
-[booked-appointment]: Appointment-booked-appointment.json.html
+[fulfilled-appointment]: Appointment-fulfilled-appointment.json.html
 [minimal-hmo]: Organization-minimal-hmo.json.html
 [cancelled-slot2]: Slot-cancelled-slot2.json.html
 [postponed-appointment]: Appointment-postponed-appointment.json.html
