@@ -14,7 +14,7 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של ה�
     * ^short = "Reference to the organization"
   * onBehalfOf only Reference(MRIProvider)
 
-* code from MriTypeCodesVS (preferred) 
+* code from MriTypeCodesVS (extensible) 
 * code ^short = "5 or 9 digits MRI procedure code"
 * code and location and performedDateTime and report MS
 * report only Reference(MRIDiagnosticReport)
