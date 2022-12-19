@@ -9,13 +9,13 @@ Description: "מטרת פרופיל זה היא להגדיר ייצוג של ה�
 * performer ^slicing.rules = #open
 * performer ^slicing.ordered = false
 * performer contains mriProvider 0..1 MS
-* performer[mriProvider] ^short = "Health provider where the MRI took place"
+* performer[mriProvider] ^short = "ספק בריאות שבו התקיים ה-MRI"
   * actor only Reference(MRIProvider) 
-    * ^short = "Reference to the organization"
+    * ^short = "התייחסות לארגון"
   * onBehalfOf only Reference(MRIProvider)
 
 * code from MriTypeCodesVS (extensible) 
-* code ^short = "5 or 9 digits MRI procedure code"
+* code ^short = "קוד הליך MRI בן 5 או 9 ספרות"
 * code and location and performedDateTime and report MS
 * report only Reference(MRIDiagnosticReport)
 
