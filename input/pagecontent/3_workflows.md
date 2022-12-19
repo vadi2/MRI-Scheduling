@@ -7,7 +7,7 @@
 For a detailed explanation of the process, see the descriptions [after the diagram](Appointment-scheduling---MRI Provider). -->
 סקירה של נתונים, שחקנים וחילופי משאבים.
 
-להסבר מפורט על התהליך, עיין בתיאורים [אחרי התרשים](#appointment-scheduling---mri-provider).
+להסבר מפורט על התהליך, עיין בתיאורים [אחרי התרשים](#mri).
 
 <div dir="ltr">{% include workflow-with-moh.svg %}</div>
 <br clear="all"/>
