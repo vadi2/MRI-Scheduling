@@ -146,7 +146,7 @@ Description: "דוגמה למשאב מינימלי לפגישת MRI נדחה (2/
 * supportingInformation[+] = Reference(cancelled-appointment)
 * supportingInformation[=].extension[previousAppointment].valueBoolean = true
 
-Instance: fulfilled-appointment
+Instance: successful-appointment
 InstanceOf: MRIAppointment
 Usage: #example
 /* 
