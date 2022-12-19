@@ -58,8 +58,6 @@ pages:
     title: זרימות עבודה
   4_security.md:
     title: בִּטָחוֹן
-  5_examples.md:
-    title: דוגמאות
   6_downloads.md:
     title: הורדות
 
@@ -96,9 +94,8 @@ parameters:
 menu:
   דף הבית: index.html
   מקרי שימוש: 2_use-cases.html
-  תהליך עבודה: 3_workflows.html
+  תהליך עבודה ודוגמאות: 3_workflows.html
   בִּטָחוֹן: 4_security.html
-  דוגמאות: 5_examples.html
   ישויות: artifacts.html
   הורדות: 6_downloads.html
   מפרטי בסיס:
