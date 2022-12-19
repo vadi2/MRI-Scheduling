@@ -16,7 +16,7 @@ Description: "מטרת פרופיל זה היא לייצג תור להליך MRI
 * slot ^slicing.discriminator.type = #profile
 * slot ^slicing.discriminator.path = "resolve()"
 * slot ^slicing.rules = #open
-* slot ^slicing.description = "Slicing to ensure that at least one MRI Slot reference exists"
+* slot ^slicing.description = "Slicing for an MRI Slot reference"
 * slot ^slicing.ordered = false
 * slot contains MRISlot 0..* MS
 * slot[MRISlot] only Reference(MRISlot)

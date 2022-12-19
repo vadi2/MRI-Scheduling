@@ -7,7 +7,7 @@ Description: "מטרת פרופיל זה היא להגדיר את המענה ל�
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Slicing to ensure form 17 number is present"
+* identifier ^slicing.description = "Slicing for a form 17 number"
 * identifier ^slicing.ordered = false
 * identifier contains form17 0..1 MS
 * identifier[form17] MS

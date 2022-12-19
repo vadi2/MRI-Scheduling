@@ -11,7 +11,7 @@ Id: mri-hmo
 // human-readable name - titlecase with spaces
 Title: "MRI HMO"
 Description: "מטרת פרופיל זה היא להגדיר ייצוג של קופת חולים המאשרת שירות MRI, במסגרת מעקב אחר זמני רשימת ההמתנה למשרד הבריאות הישראלי."
-* identifier[moe-inst] MS 
+* identifier[moe-inst] and type MS
 
 Mapping: HMOToGertner
 Source:	MRIHMO
@@ -20,6 +20,7 @@ Id: HMOMapping
 Title: "מיפוי המידע האדמיניסטרטיבי של קופת החולים למודל נתוני רשימת המתנה MRI של גרטנר"
 // TODO: is this the correct exact mapping?
 * identifier[moe-inst] -> "HMO_code"
+* type -> "MRI_Referral_Private"
 
 Instance: minimal-hmo
 InstanceOf: MRIHMO
@@ -31,7 +32,8 @@ Description: "דוגמה למשאב מינימלי של קופת חולים הת
   * value = "500100904"
   * use = #official
 * active = true
-* name = "שנה אותי"
+* type = institution-type-moh#73 "קופות חולים"
+* name = "קופת חולים כללית"
 * address.text = "שנה אותי"
 
 Instance: organization-ministry-of-health
