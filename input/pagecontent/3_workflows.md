@@ -98,7 +98,35 @@ POST [base]/Appointment
 ## Procedure report - HMO
 
 ## Procedure report - MRI Provider
+<!-- Once the procedure has been completed, the MRI provider needs to send the form 17 and procedure details to the MoH using MRIClaim, MRIClaimResponse, MRIProcedure, and MRIDiagnosticReport. -->
+לאחר השלמת ההליך, ספק ה-MRI צריך לשלוח את טופס 17 ואת פרטי ההליך למשרד הבריאות באמצעות [MRIClaim], [MRIClaimResponse], [MRIProcedure] ו-[MRIDiagnosticReport].
 
+### Form 17 request example
+**Request URL**
+
+POST [base]/Claim
+
+**Request body**
+
+דוגמה למשאב תביעה מינימלית התואם לצרכי מדידת MRI: [minimal-claim]
+
+### Form 17 successful response example
+**Request URL**
+
+POST [base]/ClaimResponse
+
+**Request body**
+
+דוגמה למשאב תגובת תביעה מינימלית שהצליח: [minimal-claimresponse]
+
+### Form 17 rejected response example
+**Request URL**
+
+POST [base]/ClaimResponse
+
+**Request body**
+
+דוגמה למשאב תגובת תביעה מינימלית שנדחה: [rejected-claimresponse]
 
 </div>
 
