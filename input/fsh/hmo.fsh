@@ -25,7 +25,7 @@ Title: "מיפוי המידע האדמיניסטרטיבי של קופת החו�
 Instance: minimal-hmo
 InstanceOf: MRIHMO
 Usage: #example
-Description: "דוגמה למשאב מינימלי של קופת חולים התואם לצרכי מדידת MRI"
+Description: " זמני המתנה דוגמה למשאב מינימלי של קופת חולים התואם לצרכי מדידת MRI"
 * meta.profile = Canonical(MRIHMO)
 * identifier
   * system = "http://fhir.health.gov.il/identifier/legal-entity"
