@@ -6,12 +6,12 @@ Description: "רשימה מרוכזת של סיבות לביטול תור. זה 
 * ^experimental = false
 
 * #cancelled "הפגישה בוטלה"
-* #patient-postponed "התור נדחה למועד מאוחר יותר מסיבות סבלניות"
-* #patient-cancelled "התור בוטל מסיבות סבלנות"
-* #clinician-postponed "התור נדחה למועד מאוחר יותר מסיבות קלינאי/רופא"
-* #clinician-cancelled "התור בוטל מסיבות של קלינאי/רופא"
-* #device-postponed "התור נדחה למועד מאוחר יותר מסיבות מכשירי MRI"
-* #device-cancelled "התור בוטל מסיבות של מכשיר MRI"
+* #patient-postponed "התור נדחה למועד מאוחר יותר על ידי המטופל"
+* #patient-cancelled "התור בוטל על ידי המטופל"
+* #clinician-postponed "התור נדחה למועד מאוחר יותר על ידי קלינאי/רופא"
+* #clinician-cancelled "התור בוטל על ידי קלינאי/רופא"
+* #device-postponed "התור נדחה למועד מאוחר יותר מסיבות טכניות MRI"
+* #device-cancelled "התור בוטל מסיבות טכניות MRI"
 * #other "סיבה אחרת"
 
 ValueSet: AppointmentCancellationReasonVS
