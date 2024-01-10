@@ -11,3 +11,8 @@ h2#artifacts-summary + div.markdown-toc {
 div.markdown-toc {
   float: left;
 }
+
+.navbar {
+  direction: rtl;
+  display: flex;
+}
